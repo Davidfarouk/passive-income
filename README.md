@@ -23,7 +23,9 @@ ones worked, mapped to the [OWASP Top 10 for LLM Applications (2025)](https://ge
   above your severity threshold succeeds.
 - **Zero dependencies.** Pure standard library. Nothing to audit but this repo.
 
-![HTML report](docs/report.png)
+![injectprobe scanning a vulnerable bot and scoring it against the OWASP LLM Top 10](docs/injectprobe-demo.gif)
+
+> The self-contained HTML report: resilience score, per-category breakdown, and every attack with the model's response and how to fix it.
 
 ## Quickstart
 
