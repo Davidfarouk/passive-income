@@ -95,16 +95,18 @@ stochastic and a 1-in-3 jailbreak is still a jailbreak.
 The free pack covers the classics. **[injectprobe Pro](https://davidfarouk.gumroad.com/l/injectprobe-pro)**
 is the pack I use for real assessments:
 
-- **152 additional attacks** (182 total), each mapped to OWASP and tagged by technique
-- **Agent / tool abuse (LLM06):** unauthorized refunds, account deletion, shell commands and data
-  exfiltration via tools, triggered by users, documents and poisoned tool output
-- **Advanced RAG poisoning:** injections in PDFs-as-text, CSV rows, code comments, JSON-LD, SVG,
-  calendar invites, support tickets, multilingual documents and Unicode tag / zero-width smuggling
+- **117 additional attacks** (147 total), each mapped to OWASP and tagged by technique
+- **Agent / tool abuse (LLM06):** unauthorized refunds, account deletion, SSRF, shell commands and
+  data exfiltration via tools, triggered by users, documents and poisoned tool output
+- **RAG poisoning in 15+ document formats:** PDF-as-text, CSV rows, code comments, JSON-LD, SVG,
+  XML/TOML, calendar invites, support tickets, Slack exports, OpenAPI specs, multilingual documents
+  and Unicode tag / zero-width smuggling
 - **Advanced extraction:** many-shot, crescendo multi-turn escalation, refusal suppression,
-  fiction framing, cipher games, token smuggling
-- **Output handling:** SQL/shell/markdown injection payloads and SSRF-style URLs your downstream code must survive
+  fiction framing, cipher games, and 10+ encodings
+- **Multilingual injection:** the same override attack in 10 languages, because guardrails cover English best
+- **Output handling:** SQLi, XSS, CSV/formula, SSTI, XXE, CRLF and path-traversal payloads your downstream code must survive
 - **Unbounded consumption (LLM10):** cost-amplification probes with safe token caps
-- **The LLM Hardening Playbook**: 24 concrete defenses with copy-paste code (spotlighting,
+- **The LLM Hardening Playbook**: concrete defenses with copy-paste code (spotlighting,
   canary tripwires in production, output filters, tool permission design, markdown-image blocking)
 - **CI templates** for GitHub Actions and GitLab CI, with report artifacts and severity gates
 - Free updates as new techniques appear
