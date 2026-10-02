@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -160,6 +161,42 @@ def cmd_list(a: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_generate(a: argparse.Namespace) -> int:
+    from .generate import generate_pack, pack_dict
+    key = env_key(a.api_key_env, "OPENAI_API_KEY")
+    if not key and "api.openai.com" in a.base_url:
+        print("error: set OPENAI_API_KEY (or --api-key-env), or point --base-url at a local server", file=sys.stderr)
+        return 2
+    gen = OpenAITarget(a.model, a.base_url, key, _headers(a.header), a.max_tokens, a.temperature, a.timeout)
+
+    def completer(system: str, user: str) -> str:
+        return gen.send(system, [{"role": "user", "content": user}], None, None).text
+
+    examples = None
+    if a.seed_pack:
+        try:
+            seed = load_pack(a.seed_pack)
+            examples = [{"title": c.title, "owasp": c.owasp, "severity": c.severity, "technique": c.technique,
+                         "messages": c.messages, "detect": c.detect} for c in seed[:3]]
+        except (FileNotFoundError, ValueError) as e:
+            print(f"error: {e}", file=sys.stderr)
+            return 2
+
+    print(f"\n  generating {a.n} attacks via {gen.name} ...", file=sys.stderr)
+    cases, warnings = generate_pack(
+        completer, a.n, owasp=a.owasp, examples=examples, batch_size=a.batch_size,
+        on_round=lambda got, want: print(f"  {got}/{want} collected", file=sys.stderr))
+    for w in warnings:
+        print(f"  warn: {w}", file=sys.stderr)
+    if not cases:
+        print("error: no valid cases were generated (check the model and --base-url)", file=sys.stderr)
+        return 2
+    a.out.write_text(json.dumps(pack_dict(cases, a.name), indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"\n  wrote {len(cases)} cases to {a.out}")
+    print(f"  run them with:  injectprobe run --pack {a.out} --target ...")
+    return 0
+
+
 def main(argv: Optional[List[str]] = None) -> int:
     parser = argparse.ArgumentParser(
         prog="injectprobe", description="Prompt-injection and system-prompt-leak testing for LLM apps.",
@@ -179,6 +216,23 @@ def main(argv: Optional[List[str]] = None) -> int:
     p_list.add_argument("--owasp", action="append", default=[])
     p_list.add_argument("--min-severity", choices=list(SEVERITY_ORDER))
 
+    p_gen = sub.add_parser("generate", help="synthesize new attacks with a local/OpenAI-compatible model",
+                           epilog=EPILOG, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p_gen.add_argument("--model", "-m", required=True, help="model name on your server, e.g. llama3.1")
+    p_gen.add_argument("--base-url", default="https://api.openai.com/v1",
+                       help="your LLM server, e.g. http://localhost:11434/v1 for Ollama")
+    p_gen.add_argument("--api-key-env", help="env var with the API key (default OPENAI_API_KEY; local servers often need none)")
+    p_gen.add_argument("--header", "-H", action="append", default=[], help="extra HTTP header 'Name: value'")
+    p_gen.add_argument("--n", type=int, default=20, help="how many attacks to generate (default 20)")
+    p_gen.add_argument("--owasp", help="focus a single OWASP category, e.g. LLM07")
+    p_gen.add_argument("--seed-pack", help="pack whose first cases are shown to the model as style examples")
+    p_gen.add_argument("--batch-size", type=int, default=8, help="attacks requested per model call")
+    p_gen.add_argument("--temperature", type=float, default=0.9)
+    p_gen.add_argument("--max-tokens", type=int, default=2000)
+    p_gen.add_argument("--timeout", type=float, default=180)
+    p_gen.add_argument("--name", default="generated", help="pack name written into the output JSON")
+    p_gen.add_argument("--out", "-o", type=Path, default=Path("generated.json"), help="output pack path")
+
     a = parser.parse_args(argv)
     if a.cmd == "run":
         return cmd_run(a)
@@ -188,5 +242,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         return cmd_run(demo_args)
     if a.cmd == "list":
         return cmd_list(a)
+    if a.cmd == "generate":
+        return cmd_generate(a)
     parser.print_help()
     return 0

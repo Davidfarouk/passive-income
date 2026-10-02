@@ -138,6 +138,22 @@ instruction; quoting the attack back doesn't count), `exfil` (images/links to fo
 data), `{"regex": "..."}` and `{"tool": "name"}` (a forbidden tool call). `context` adds retrieved
 documents for indirect injection; `tools` exposes mock tools to tool-calling models.
 
+## Generate attacks with a local model
+
+Point `injectprobe generate` at your own LLM server (Ollama, vLLM, LM Studio — anything
+OpenAI-compatible) and it synthesizes new attack variations in the pack schema. Every generated
+case is validated, de-duplicated and run through the marker-safety fix, so malformed output is
+dropped rather than written.
+
+```bash
+injectprobe generate --base-url http://localhost:11434/v1 --model llama3.1 \
+  --n 30 --owasp LLM07 --seed-pack core --out my-pack.json
+injectprobe run --pack my-pack.json --target openai --model gpt-4o-mini
+```
+
+Useful for growing your corpus or creating domain-specific attacks for a particular app — turning
+spare local inference into more coverage.
+
 ## Responsible use
 
 Only test systems you own or are explicitly authorized to test. The attacks use harmless canaries
