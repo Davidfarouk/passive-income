@@ -93,7 +93,7 @@ stochastic and a 1-in-3 jailbreak is still a jailbreak.
 ## injectprobe Pro: 150+ more attacks for agents and RAG
 
 The free pack covers the classics. **[injectprobe Pro](https://davidfarouk.gumroad.com/l/injectprobe-pro)**
-is the pack I use for real assessments:
+is the pack I use for real assessments — **$9 launch price**:
 
 - **117 additional attacks** (147 total), each mapped to OWASP and tagged by technique
 - **Agent / tool abuse (LLM06):** unauthorized refunds, account deletion, SSRF, shell commands and
@@ -113,7 +113,7 @@ is the pack I use for real assessments:
 
 Drop `pro.json` into `~/.injectprobe/packs/` and run `injectprobe run --pack core --pack pro ...`.
 
-**[Get injectprobe Pro →](https://davidfarouk.gumroad.com/l/injectprobe-pro)**
+**[Get injectprobe Pro — $9 →](https://davidfarouk.gumroad.com/l/injectprobe-pro)**
 
 ## Writing your own attacks
 
