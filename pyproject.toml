@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "injectprobe"
+version = "0.1.0"
+description = "Find prompt-injection and system-prompt leaks in LLM apps. Zero dependencies, CI-ready, canary-based detection."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "David Farouk" }]
+keywords = ["llm", "security", "prompt-injection", "red-team", "owasp", "ai-safety", "pentest", "jailbreak", "rag"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security",
+    "Topic :: Software Development :: Testing",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/Davidfarouk/passive-income"
+"Pro attack pack" = "https://davidfarouk.gumroad.com/l/injectprobe-pro"
+
+[project.scripts]
+injectprobe = "injectprobe.cli:main"
+
+[tool.setuptools]
+packages = ["injectprobe"]
+
+[tool.setuptools.package-data]
+injectprobe = ["packs/*.json"]
