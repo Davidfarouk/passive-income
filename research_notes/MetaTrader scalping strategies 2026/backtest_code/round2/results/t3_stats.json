@@ -1,0 +1,626 @@
+{
+ "AUDNZD_N1_bb_sl1.5x_mintp0": {
+  "family": "N1",
+  "sl_mult": 1.5,
+  "min_tp_pips": 0,
+  "window": "night",
+  "trades": 1725,
+  "base": 2.1,
+  "pct_rollover": 12.695652173913045,
+  "pct_swap": 15.36231884057971
+ },
+ "AUDNZD_N1_bb_sl1.5x_mintp5": {
+  "family": "N1",
+  "sl_mult": 1.5,
+  "min_tp_pips": 5,
+  "window": "night",
+  "trades": 408,
+  "base": 2.1,
+  "pct_rollover": 12.009803921568627,
+  "pct_swap": 17.892156862745097
+ },
+ "AUDNZD_N1_bb_sl2.0x_mintp0": {
+  "family": "N1",
+  "sl_mult": 2.0,
+  "min_tp_pips": 0,
+  "window": "night",
+  "trades": 1641,
+  "base": 2.1,
+  "pct_rollover": 12.431444241316271,
+  "pct_swap": 17.24558196221816
+ },
+ "AUDNZD_N1_bb_sl2.0x_mintp5": {
+  "family": "N1",
+  "sl_mult": 2.0,
+  "min_tp_pips": 5,
+  "window": "night",
+  "trades": 401,
+  "base": 2.1,
+  "pct_rollover": 12.219451371571072,
+  "pct_swap": 19.70074812967581
+ },
+ "AUDNZD_N2_limit_tp6_sl12": {
+  "family": "N2",
+  "tp_pips": 6,
+  "sl_pips": 12,
+  "window": "night",
+  "nights": 593,
+  "trades": 669,
+  "base": 2.1,
+  "pct_rollover": 25.710014947683106,
+  "pct_swap": 33.03437967115097
+ },
+ "AUDNZD_N2_limit_tp10_sl20": {
+  "family": "N2",
+  "tp_pips": 10,
+  "sl_pips": 20,
+  "window": "night",
+  "nights": 593,
+  "trades": 658,
+  "base": 2.1,
+  "pct_rollover": 24.924012158054712,
+  "pct_swap": 53.34346504559271
+ },
+ "AUDNZD_N3_rsi2_night": {
+  "family": "N3",
+  "window": "night",
+  "trades": 909,
+  "base": 2.1,
+  "pct_rollover": 15.731573157315731,
+  "pct_swap": 4.9504950495049505
+ },
+ "AUDNZD_N3_rsi2_allday": {
+  "family": "N3",
+  "window": "allday",
+  "trades": 5212,
+  "base": 2.1,
+  "pct_rollover": 3.165771297006907,
+  "pct_swap": 1.1320030698388335
+ },
+ "EURCHF_N1_bb_sl1.5x_mintp0": {
+  "family": "N1",
+  "sl_mult": 1.5,
+  "min_tp_pips": 0,
+  "window": "night",
+  "trades": 1372,
+  "base": 1.9,
+  "pct_rollover": 11.9533527696793,
+  "pct_swap": 20.11661807580175
+ },
+ "EURCHF_N1_bb_sl1.5x_mintp5": {
+  "family": "N1",
+  "sl_mult": 1.5,
+  "min_tp_pips": 5,
+  "window": "night",
+  "trades": 279,
+  "base": 1.9,
+  "pct_rollover": 9.67741935483871,
+  "pct_swap": 28.673835125448026
+ },
+ "EURCHF_N1_bb_sl2.0x_mintp0": {
+  "family": "N1",
+  "sl_mult": 2.0,
+  "min_tp_pips": 0,
+  "window": "night",
+  "trades": 1292,
+  "base": 1.9,
+  "pct_rollover": 11.91950464396285,
+  "pct_swap": 23.142414860681114
+ },
+ "EURCHF_N1_bb_sl2.0x_mintp5": {
+  "family": "N1",
+  "sl_mult": 2.0,
+  "min_tp_pips": 5,
+  "window": "night",
+  "trades": 270,
+  "base": 1.9,
+  "pct_rollover": 9.25925925925926,
+  "pct_swap": 30.37037037037037
+ },
+ "EURCHF_N2_limit_tp6_sl12": {
+  "family": "N2",
+  "tp_pips": 6,
+  "sl_pips": 12,
+  "window": "night",
+  "nights": 593,
+  "trades": 473,
+  "base": 1.9,
+  "pct_rollover": 16.0676532769556,
+  "pct_swap": 47.99154334038055
+ },
+ "EURCHF_N2_limit_tp10_sl20": {
+  "family": "N2",
+  "tp_pips": 10,
+  "sl_pips": 20,
+  "window": "night",
+  "nights": 593,
+  "trades": 469,
+  "base": 1.9,
+  "pct_rollover": 15.13859275053305,
+  "pct_swap": 67.590618336887
+ },
+ "EURCHF_N3_rsi2_night": {
+  "family": "N3",
+  "window": "night",
+  "trades": 1155,
+  "base": 1.9,
+  "pct_rollover": 17.316017316017316,
+  "pct_swap": 5.454545454545454
+ },
+ "EURCHF_N3_rsi2_allday": {
+  "family": "N3",
+  "window": "allday",
+  "trades": 5952,
+  "base": 1.9,
+  "pct_rollover": 3.780241935483871,
+  "pct_swap": 1.310483870967742
+ },
+ "EURGBP_N1_bb_sl1.5x_mintp0": {
+  "family": "N1",
+  "sl_mult": 1.5,
+  "min_tp_pips": 0,
+  "window": "night",
+  "trades": 1235,
+  "base": 1.7999999999999998,
+  "pct_rollover": 13.360323886639677,
+  "pct_swap": 19.67611336032389
+ },
+ "EURGBP_N1_bb_sl1.5x_mintp5": {
+  "family": "N1",
+  "sl_mult": 1.5,
+  "min_tp_pips": 5,
+  "window": "night",
+  "trades": 132,
+  "base": 1.7999999999999998,
+  "pct_rollover": 9.848484848484848,
+  "pct_swap": 32.57575757575758
+ },
+ "EURGBP_N1_bb_sl2.0x_mintp0": {
+  "family": "N1",
+  "sl_mult": 2.0,
+  "min_tp_pips": 0,
+  "window": "night",
+  "trades": 1179,
+  "base": 1.7999999999999998,
+  "pct_rollover": 13.146734520780324,
+  "pct_swap": 23.155216284987276
+ },
+ "EURGBP_N1_bb_sl2.0x_mintp5": {
+  "family": "N1",
+  "sl_mult": 2.0,
+  "min_tp_pips": 5,
+  "window": "night",
+  "trades": 129,
+  "base": 1.7999999999999998,
+  "pct_rollover": 8.527131782945736,
+  "pct_swap": 37.2093023255814
+ },
+ "EURGBP_N2_limit_tp6_sl12": {
+  "family": "N2",
+  "tp_pips": 6,
+  "sl_pips": 12,
+  "window": "night",
+  "nights": 593,
+  "trades": 432,
+  "base": 1.7999999999999998,
+  "pct_rollover": 11.805555555555555,
+  "pct_swap": 64.81481481481481
+ },
+ "EURGBP_N2_limit_tp10_sl20": {
+  "family": "N2",
+  "tp_pips": 10,
+  "sl_pips": 20,
+  "window": "night",
+  "nights": 593,
+  "trades": 428,
+  "base": 1.7999999999999998,
+  "pct_rollover": 11.448598130841122,
+  "pct_swap": 76.4018691588785
+ },
+ "EURGBP_N3_rsi2_night": {
+  "family": "N3",
+  "window": "night",
+  "trades": 1272,
+  "base": 1.7999999999999998,
+  "pct_rollover": 16.50943396226415,
+  "pct_swap": 5.50314465408805
+ },
+ "EURGBP_N3_rsi2_allday": {
+  "family": "N3",
+  "window": "allday",
+  "trades": 6232,
+  "base": 1.7999999999999998,
+  "pct_rollover": 3.9634146341463414,
+  "pct_swap": 1.3478818998716302
+ },
+ "AUDCAD_N1_bb_sl1.5x_mintp0": {
+  "family": "N1",
+  "sl_mult": 1.5,
+  "min_tp_pips": 0,
+  "window": "night",
+  "trades": 1448,
+  "base": 2.0,
+  "pct_rollover": 11.049723756906078,
+  "pct_swap": 22.375690607734807
+ },
+ "AUDCAD_N1_bb_sl1.5x_mintp5": {
+  "family": "N1",
+  "sl_mult": 1.5,
+  "min_tp_pips": 5,
+  "window": "night",
+  "trades": 460,
+  "base": 2.0,
+  "pct_rollover": 7.608695652173914,
+  "pct_swap": 35.869565217391305
+ },
+ "AUDCAD_N1_bb_sl2.0x_mintp0": {
+  "family": "N1",
+  "sl_mult": 2.0,
+  "min_tp_pips": 0,
+  "window": "night",
+  "trades": 1366,
+  "base": 2.0,
+  "pct_rollover": 10.68814055636896,
+  "pct_swap": 24.45095168374817
+ },
+ "AUDCAD_N1_bb_sl2.0x_mintp5": {
+  "family": "N1",
+  "sl_mult": 2.0,
+  "min_tp_pips": 5,
+  "window": "night",
+  "trades": 442,
+  "base": 2.0,
+  "pct_rollover": 7.918552036199094,
+  "pct_swap": 37.782805429864254
+ },
+ "AUDCAD_N2_limit_tp6_sl12": {
+  "family": "N2",
+  "tp_pips": 6,
+  "sl_pips": 12,
+  "window": "night",
+  "nights": 593,
+  "trades": 467,
+  "base": 2.0,
+  "pct_rollover": 8.993576017130621,
+  "pct_swap": 40.04282655246253
+ },
+ "AUDCAD_N2_limit_tp10_sl20": {
+  "family": "N2",
+  "tp_pips": 10,
+  "sl_pips": 20,
+  "window": "night",
+  "nights": 593,
+  "trades": 463,
+  "base": 2.0,
+  "pct_rollover": 8.639308855291576,
+  "pct_swap": 61.33909287257019
+ },
+ "AUDCAD_N3_rsi2_night": {
+  "family": "N3",
+  "window": "night",
+  "trades": 1211,
+  "base": 2.0,
+  "pct_rollover": 15.68951279933939,
+  "pct_swap": 4.706853839801816
+ },
+ "AUDCAD_N3_rsi2_allday": {
+  "family": "N3",
+  "window": "allday",
+  "trades": 5990,
+  "base": 2.0,
+  "pct_rollover": 3.6060100166944906,
+  "pct_swap": 1.2186978297161937
+ },
+ "GBPCAD_N1_bb_sl1.5x_mintp0": {
+  "family": "N1",
+  "sl_mult": 1.5,
+  "min_tp_pips": 0,
+  "window": "night",
+  "trades": 1384,
+  "base": 2.4,
+  "pct_rollover": 13.222543352601157,
+  "pct_swap": 22.109826589595375
+ },
+ "GBPCAD_N1_bb_sl1.5x_mintp5": {
+  "family": "N1",
+  "sl_mult": 1.5,
+  "min_tp_pips": 5,
+  "window": "night",
+  "trades": 840,
+  "base": 2.4,
+  "pct_rollover": 12.142857142857142,
+  "pct_swap": 32.02380952380952
+ },
+ "GBPCAD_N1_bb_sl2.0x_mintp0": {
+  "family": "N1",
+  "sl_mult": 2.0,
+  "min_tp_pips": 0,
+  "window": "night",
+  "trades": 1319,
+  "base": 2.4,
+  "pct_rollover": 13.343442001516301,
+  "pct_swap": 23.047763457164518
+ },
+ "GBPCAD_N1_bb_sl2.0x_mintp5": {
+  "family": "N1",
+  "sl_mult": 2.0,
+  "min_tp_pips": 5,
+  "window": "night",
+  "trades": 804,
+  "base": 2.4,
+  "pct_rollover": 11.81592039800995,
+  "pct_swap": 33.45771144278607
+ },
+ "GBPCAD_N2_limit_tp6_sl12": {
+  "family": "N2",
+  "tp_pips": 6,
+  "sl_pips": 12,
+  "window": "night",
+  "nights": 593,
+  "trades": 390,
+  "base": 2.4,
+  "pct_rollover": 10.512820512820513,
+  "pct_swap": 18.461538461538463
+ },
+ "GBPCAD_N2_limit_tp10_sl20": {
+  "family": "N2",
+  "tp_pips": 10,
+  "sl_pips": 20,
+  "window": "night",
+  "nights": 593,
+  "trades": 390,
+  "base": 2.4,
+  "pct_rollover": 10.512820512820513,
+  "pct_swap": 40.0
+ },
+ "GBPCAD_N3_rsi2_night": {
+  "family": "N3",
+  "window": "night",
+  "trades": 1089,
+  "base": 2.4,
+  "pct_rollover": 15.059687786960515,
+  "pct_swap": 6.0606060606060606
+ },
+ "GBPCAD_N3_rsi2_allday": {
+  "family": "N3",
+  "window": "allday",
+  "trades": 5449,
+  "base": 2.4,
+  "pct_rollover": 3.3951183703431824,
+  "pct_swap": 1.523215268856671
+ },
+ "NZDCAD_N1_bb_sl1.5x_mintp0": {
+  "family": "N1",
+  "sl_mult": 1.5,
+  "min_tp_pips": 0,
+  "window": "night",
+  "trades": 1542,
+  "base": 2.2,
+  "pct_rollover": 12.38651102464332,
+  "pct_swap": 19.13099870298314
+ },
+ "NZDCAD_N1_bb_sl1.5x_mintp5": {
+  "family": "N1",
+  "sl_mult": 1.5,
+  "min_tp_pips": 5,
+  "window": "night",
+  "trades": 514,
+  "base": 2.2,
+  "pct_rollover": 10.700389105058365,
+  "pct_swap": 30.739299610894943
+ },
+ "NZDCAD_N1_bb_sl2.0x_mintp0": {
+  "family": "N1",
+  "sl_mult": 2.0,
+  "min_tp_pips": 0,
+  "window": "night",
+  "trades": 1452,
+  "base": 2.2,
+  "pct_rollover": 11.84573002754821,
+  "pct_swap": 21.831955922865014
+ },
+ "NZDCAD_N1_bb_sl2.0x_mintp5": {
+  "family": "N1",
+  "sl_mult": 2.0,
+  "min_tp_pips": 5,
+  "window": "night",
+  "trades": 495,
+  "base": 2.2,
+  "pct_rollover": 10.303030303030303,
+  "pct_swap": 33.73737373737374
+ },
+ "NZDCAD_N2_limit_tp6_sl12": {
+  "family": "N2",
+  "tp_pips": 6,
+  "sl_pips": 12,
+  "window": "night",
+  "nights": 593,
+  "trades": 521,
+  "base": 2.2,
+  "pct_rollover": 13.24376199616123,
+  "pct_swap": 38.00383877159309
+ },
+ "NZDCAD_N2_limit_tp10_sl20": {
+  "family": "N2",
+  "tp_pips": 10,
+  "sl_pips": 20,
+  "window": "night",
+  "nights": 593,
+  "trades": 519,
+  "base": 2.2,
+  "pct_rollover": 13.102119460500964,
+  "pct_swap": 58.1888246628131
+ },
+ "NZDCAD_N3_rsi2_night": {
+  "family": "N3",
+  "window": "night",
+  "trades": 1244,
+  "base": 2.2,
+  "pct_rollover": 17.44372990353698,
+  "pct_swap": 4.340836012861737
+ },
+ "NZDCAD_N3_rsi2_allday": {
+  "family": "N3",
+  "window": "allday",
+  "trades": 6162,
+  "base": 2.2,
+  "pct_rollover": 3.894839337877313,
+  "pct_swap": 1.1522233041220382
+ },
+ "EURAUD_N1_bb_sl1.5x_mintp0": {
+  "family": "N1",
+  "sl_mult": 1.5,
+  "min_tp_pips": 0,
+  "window": "night",
+  "trades": 1545,
+  "base": 2.1,
+  "pct_rollover": 11.715210355987054,
+  "pct_swap": 19.93527508090615
+ },
+ "EURAUD_N1_bb_sl1.5x_mintp5": {
+  "family": "N1",
+  "sl_mult": 1.5,
+  "min_tp_pips": 5,
+  "window": "night",
+  "trades": 910,
+  "base": 2.1,
+  "pct_rollover": 10.219780219780219,
+  "pct_swap": 26.593406593406595
+ },
+ "EURAUD_N1_bb_sl2.0x_mintp0": {
+  "family": "N1",
+  "sl_mult": 2.0,
+  "min_tp_pips": 0,
+  "window": "night",
+  "trades": 1448,
+  "base": 2.1,
+  "pct_rollover": 11.740331491712707,
+  "pct_swap": 22.513812154696133
+ },
+ "EURAUD_N1_bb_sl2.0x_mintp5": {
+  "family": "N1",
+  "sl_mult": 2.0,
+  "min_tp_pips": 5,
+  "window": "night",
+  "trades": 856,
+  "base": 2.1,
+  "pct_rollover": 10.046728971962617,
+  "pct_swap": 29.439252336448597
+ },
+ "EURAUD_N2_limit_tp6_sl12": {
+  "family": "N2",
+  "tp_pips": 6,
+  "sl_pips": 12,
+  "window": "night",
+  "nights": 593,
+  "trades": 424,
+  "base": 2.1,
+  "pct_rollover": 9.90566037735849,
+  "pct_swap": 18.160377358490564
+ },
+ "EURAUD_N2_limit_tp10_sl20": {
+  "family": "N2",
+  "tp_pips": 10,
+  "sl_pips": 20,
+  "window": "night",
+  "nights": 593,
+  "trades": 424,
+  "base": 2.1,
+  "pct_rollover": 9.90566037735849,
+  "pct_swap": 37.971698113207545
+ },
+ "EURAUD_N3_rsi2_night": {
+  "family": "N3",
+  "window": "night",
+  "trades": 1114,
+  "base": 2.1,
+  "pct_rollover": 19.03052064631957,
+  "pct_swap": 6.193895870736086
+ },
+ "EURAUD_N3_rsi2_allday": {
+  "family": "N3",
+  "window": "allday",
+  "trades": 5325,
+  "base": 2.1,
+  "pct_rollover": 4.563380281690141,
+  "pct_swap": 1.6713615023474178
+ },
+ "EURUSD_N1_bb_sl1.5x_mintp0": {
+  "family": "N1",
+  "sl_mult": 1.5,
+  "min_tp_pips": 0,
+  "window": "night",
+  "trades": 1181,
+  "base": 1.5,
+  "pct_rollover": 8.29805249788315,
+  "pct_swap": 27.34970364098222
+ },
+ "EURUSD_N1_bb_sl1.5x_mintp5": {
+  "family": "N1",
+  "sl_mult": 1.5,
+  "min_tp_pips": 5,
+  "window": "night",
+  "trades": 503,
+  "base": 1.5,
+  "pct_rollover": 3.180914512922465,
+  "pct_swap": 41.74950298210736
+ },
+ "EURUSD_N1_bb_sl2.0x_mintp0": {
+  "family": "N1",
+  "sl_mult": 2.0,
+  "min_tp_pips": 0,
+  "window": "night",
+  "trades": 1113,
+  "base": 1.5,
+  "pct_rollover": 8.265947888589398,
+  "pct_swap": 30.727762803234505
+ },
+ "EURUSD_N1_bb_sl2.0x_mintp5": {
+  "family": "N1",
+  "sl_mult": 2.0,
+  "min_tp_pips": 5,
+  "window": "night",
+  "trades": 492,
+  "base": 1.5,
+  "pct_rollover": 3.4552845528455287,
+  "pct_swap": 46.138211382113816
+ },
+ "EURUSD_N2_limit_tp6_sl12": {
+  "family": "N2",
+  "tp_pips": 6,
+  "sl_pips": 12,
+  "window": "night",
+  "nights": 593,
+  "trades": 392,
+  "base": 1.5,
+  "pct_rollover": 1.7857142857142856,
+  "pct_swap": 38.52040816326531
+ },
+ "EURUSD_N2_limit_tp10_sl20": {
+  "family": "N2",
+  "tp_pips": 10,
+  "sl_pips": 20,
+  "window": "night",
+  "nights": 593,
+  "trades": 392,
+  "base": 1.5,
+  "pct_rollover": 2.0408163265306123,
+  "pct_swap": 61.98979591836735
+ },
+ "EURUSD_N3_rsi2_night": {
+  "family": "N3",
+  "window": "night",
+  "trades": 1402,
+  "base": 1.5,
+  "pct_rollover": 11.982881597717546,
+  "pct_swap": 5.064194008559201
+ },
+ "EURUSD_N3_rsi2_allday": {
+  "family": "N3",
+  "window": "allday",
+  "trades": 6367,
+  "base": 1.5,
+  "pct_rollover": 3.0469608920998903,
+  "pct_swap": 1.382126590230878
+ }
+}

@@ -1,0 +1,89 @@
+AUDNZD: median gap length at the 00:00 rollover 1 min; median |open-prev close| at the rollover bar 1.0 pips vs 0.0 pips elsewhere; 95th pct 10.1 vs 1.0
+EURCHF: median gap length at the 00:00 rollover 1 min; median |open-prev close| at the rollover bar 1.0 pips vs 0.0 pips elsewhere; 95th pct 10.0 vs 1.0
+EURGBP: median gap length at the 00:00 rollover 1 min; median |open-prev close| at the rollover bar 0.0 pips vs 0.0 pips elsewhere; 95th pct 6.0 vs 1.0
+AUDCAD: median gap length at the 00:00 rollover 1 min; median |open-prev close| at the rollover bar 1.0 pips vs 0.0 pips elsewhere; 95th pct 10.0 vs 1.0
+GBPCAD: median gap length at the 00:00 rollover 1 min; median |open-prev close| at the rollover bar 1.0 pips vs 1.0 pips elsewhere; 95th pct 13.0 vs 1.0
+NZDCAD: median gap length at the 00:00 rollover 1 min; median |open-prev close| at the rollover bar 1.0 pips vs 0.0 pips elsewhere; 95th pct 8.0 vs 1.0
+EURAUD: median gap length at the 00:00 rollover 1 min; median |open-prev close| at the rollover bar 1.0 pips vs 1.0 pips elsewhere; 95th pct 15.1 vs 1.0
+EURUSD: median gap length at the 00:00 rollover 1 min; median |open-prev close| at the rollover bar 0.0 pips vs 0.0 pips elsewhere; 95th pct 6.0 vs 1.0
+             symbol              variant                bucket  trades   exp      net  share_of_net_pct  same_bar_pct  ci_lo  ci_hi
+360  POOLED_CROSSES  N1_bb_sl2.0x_mintp5                   ALL    3397  1.04  3549.75            100.00          0.62   0.63   1.50
+361  POOLED_CROSSES  N1_bb_sl2.0x_mintp5      EXCL 23:30-00:30    2384 -0.42  -998.00            -28.11          0.34  -0.96   0.10
+362  POOLED_CROSSES  N1_bb_sl2.0x_mintp5  SAME-BAR trades only      21  3.21    67.45              1.90        100.00  -0.54   6.20
+363  POOLED_CROSSES  N1_bb_sl2.0x_mintp5  EXCL same-bar trades    3376  1.03  3482.30             98.10          0.00   0.57   1.47
+364  POOLED_CROSSES  N1_bb_sl2.0x_mintp5  rollover bucket only    1013  4.49  4547.75            128.11          1.28   3.74   5.19
+365  POOLED_CROSSES  N1_bb_sl1.5x_mintp5                   ALL    3543  0.92  3258.77            100.00          0.71   0.50   1.34
+366  POOLED_CROSSES  N1_bb_sl1.5x_mintp5      EXCL 23:30-00:30    2489 -0.43 -1079.60            -33.13          0.40  -0.90   0.03
+367  POOLED_CROSSES  N1_bb_sl1.5x_mintp5  SAME-BAR trades only      25  0.79    19.77              0.61        100.00  -3.01   4.26
+368  POOLED_CROSSES  N1_bb_sl1.5x_mintp5  EXCL same-bar trades    3518  0.92  3239.00             99.39          0.00   0.52   1.31
+369  POOLED_CROSSES  N1_bb_sl1.5x_mintp5  rollover bucket only    1054  4.12  4338.37            133.13          1.42   3.40   4.83
+370  POOLED_CROSSES    N2_limit_tp6_sl12                   ALL    3376  0.28   934.20            100.00          7.02   0.04   0.50
+371  POOLED_CROSSES    N2_limit_tp6_sl12      EXCL 23:30-00:30    2728 -0.26  -717.60            -76.81          4.80  -0.54   0.00
+372  POOLED_CROSSES    N2_limit_tp6_sl12  SAME-BAR trades only     237  2.13   505.00             54.06        100.00   1.43   2.75
+373  POOLED_CROSSES    N2_limit_tp6_sl12  EXCL same-bar trades    3139  0.14   429.20             45.94          0.00  -0.11   0.39
+374  POOLED_CROSSES    N2_limit_tp6_sl12  rollover bucket only     648  2.55  1651.80            176.81         16.36   2.13   2.93
+375  POOLED_CROSSES   N2_limit_tp10_sl20                   ALL    3351  0.80  2664.50            100.00          2.86   0.45   1.17
+376  POOLED_CROSSES   N2_limit_tp10_sl20      EXCL 23:30-00:30    2719 -0.04  -102.80             -3.86          2.24  -0.45   0.38
+377  POOLED_CROSSES   N2_limit_tp10_sl20  SAME-BAR trades only      96  5.04   483.90             18.16        100.00   3.18   6.61
+378  POOLED_CROSSES   N2_limit_tp10_sl20  EXCL same-bar trades    3255  0.67  2180.60             81.84          0.00   0.31   1.02
+379  POOLED_CROSSES   N2_limit_tp10_sl20  rollover bucket only     632  4.38  2767.30            103.86          5.54   3.76   5.03
+380  POOLED_CROSSES  N1_bb_sl2.0x_mintp0                   ALL    9697 -0.36 -3455.90            100.00          2.04  -0.53  -0.19
+381  POOLED_CROSSES  N1_bb_sl2.0x_mintp0      EXCL 23:30-00:30    6762 -1.05 -7112.55            205.81          1.42  -1.26  -0.84
+382  POOLED_CROSSES  N1_bb_sl2.0x_mintp0  SAME-BAR trades only     198 -0.29   -56.95              1.65        100.00  -0.80   0.19
+383  POOLED_CROSSES  N1_bb_sl2.0x_mintp0  EXCL same-bar trades    9499 -0.36 -3398.95             98.35          0.00  -0.52  -0.19
+384  POOLED_CROSSES  N1_bb_sl2.0x_mintp0  rollover bucket only    2935  1.25  3656.65           -105.81          3.48   0.96   1.51
+     symbol              variant                  bucket  trades   exp      net  share_of_net_pct  same_bar_pct  ci_lo  ci_hi
+0    AUDNZD  N1_bb_sl2.0x_mintp5             21:00-22:00      45  0.70    31.55              3.41          0.00    NaN    NaN
+1    AUDNZD  N1_bb_sl2.0x_mintp5             22:00-23:00      50  0.52    25.90              2.80          0.00    NaN    NaN
+2    AUDNZD  N1_bb_sl2.0x_mintp5             23:00-23:30      18  4.97    89.50              9.66          0.00    NaN    NaN
+3    AUDNZD  N1_bb_sl2.0x_mintp5  23:30-00:30 (rollover)     163  4.44   723.25             78.09          2.45    NaN    NaN
+4    AUDNZD  N1_bb_sl2.0x_mintp5             00:30-02:00     125  0.45    56.00              6.05          1.60    NaN    NaN
+5    AUDNZD  N1_bb_sl2.0x_mintp5                     ALL     401  2.31   926.20            100.00          1.50   1.38   3.18
+6    AUDNZD  N1_bb_sl2.0x_mintp5        EXCL 23:30-00:30     238  0.85   202.95             21.91          0.84  -0.44   2.06
+7    AUDNZD  N1_bb_sl2.0x_mintp5    SAME-BAR trades only       6  5.67    34.05              3.68        100.00    NaN    NaN
+8    AUDNZD  N1_bb_sl2.0x_mintp5    EXCL same-bar trades     395  2.26   892.15             96.32          0.00   1.35   3.19
+27   AUDNZD   N2_limit_tp10_sl20             21:00-22:00     291  1.69   490.90             29.46          1.37    NaN    NaN
+28   AUDNZD   N2_limit_tp10_sl20             22:00-23:00      94  2.01   188.60             11.32          0.00    NaN    NaN
+29   AUDNZD   N2_limit_tp10_sl20             23:00-23:30      31  1.51    46.90              2.81          0.00    NaN    NaN
+30   AUDNZD   N2_limit_tp10_sl20  23:30-00:30 (rollover)     198  4.65   921.20             55.29          9.60    NaN    NaN
+31   AUDNZD   N2_limit_tp10_sl20             00:30-02:00      44  0.42    18.60              1.12         13.64    NaN    NaN
+32   AUDNZD   N2_limit_tp10_sl20                     ALL     658  2.53  1666.20            100.00          4.41   1.69   3.34
+33   AUDNZD   N2_limit_tp10_sl20        EXCL 23:30-00:30     460  1.62   745.00             44.71          2.17   0.60   2.65
+34   AUDNZD   N2_limit_tp10_sl20    SAME-BAR trades only      29  3.76   109.10              6.55        100.00    NaN    NaN
+35   AUDNZD   N2_limit_tp10_sl20    EXCL same-bar trades     629  2.48  1557.10             93.45          0.00   1.63   3.31
+45   EURCHF  N1_bb_sl2.0x_mintp5             21:00-22:00      59  1.46    86.00             14.52          1.69    NaN    NaN
+46   EURCHF  N1_bb_sl2.0x_mintp5             22:00-23:00      49  0.77    37.65              6.36          0.00    NaN    NaN
+47   EURCHF  N1_bb_sl2.0x_mintp5             23:00-23:30      13 -1.29   -16.80             -2.84          0.00    NaN    NaN
+48   EURCHF  N1_bb_sl2.0x_mintp5  23:30-00:30 (rollover)      88  4.70   413.80             69.88          0.00    NaN    NaN
+49   EURCHF  N1_bb_sl2.0x_mintp5             00:30-02:00      61  1.17    71.55             12.08          0.00    NaN    NaN
+50   EURCHF  N1_bb_sl2.0x_mintp5                     ALL     270  2.19   592.20            100.00          0.37   1.06   3.38
+51   EURCHF  N1_bb_sl2.0x_mintp5        EXCL 23:30-00:30     182  0.98   178.40             30.12          0.55  -0.32   2.28
+52   EURCHF  N1_bb_sl2.0x_mintp5    SAME-BAR trades only       1  3.90     3.90              0.66        100.00    NaN    NaN
+53   EURCHF  N1_bb_sl2.0x_mintp5    EXCL same-bar trades     269  2.19   588.30             99.34          0.00   1.02   3.38
+72   EURCHF   N2_limit_tp10_sl20             21:00-22:00     244  0.26    64.40             10.84          0.41    NaN    NaN
+73   EURCHF   N2_limit_tp10_sl20             22:00-23:00      85  0.05     4.50              0.76          0.00    NaN    NaN
+74   EURCHF   N2_limit_tp10_sl20             23:00-23:30      26  1.87    48.60              8.18          7.69    NaN    NaN
+75   EURCHF   N2_limit_tp10_sl20  23:30-00:30 (rollover)      94  5.03   472.40             79.54          3.19    NaN    NaN
+76   EURCHF   N2_limit_tp10_sl20             00:30-02:00      20  0.20     4.00              0.67          0.00    NaN    NaN
+77   EURCHF   N2_limit_tp10_sl20                     ALL     469  1.27   593.90            100.00          1.28   0.50   2.03
+78   EURCHF   N2_limit_tp10_sl20        EXCL 23:30-00:30     375  0.32   121.50             20.46          0.80  -0.59   1.21
+79   EURCHF   N2_limit_tp10_sl20    SAME-BAR trades only       6  8.10    48.60              8.18        100.00    NaN    NaN
+80   EURCHF   N2_limit_tp10_sl20    EXCL same-bar trades     463  1.18   545.30             91.82          0.00   0.41   1.93
+270  EURAUD  N1_bb_sl2.0x_mintp5             21:00-22:00     210 -0.66  -137.55            -21.38          0.48    NaN    NaN
+271  EURAUD  N1_bb_sl2.0x_mintp5             22:00-23:00     139 -1.82  -252.95            -39.31          0.00    NaN    NaN
+272  EURAUD  N1_bb_sl2.0x_mintp5             23:00-23:30      67  0.74    49.85              7.75          0.00    NaN    NaN
+273  EURAUD  N1_bb_sl2.0x_mintp5  23:30-00:30 (rollover)     225  5.21  1172.30            182.19          0.89    NaN    NaN
+274  EURAUD  N1_bb_sl2.0x_mintp5             00:30-02:00     215 -0.88  -188.20            -29.25          0.93    NaN    NaN
+275  EURAUD  N1_bb_sl2.0x_mintp5                     ALL     856  0.75   643.45            100.00          0.58  -0.39   1.83
+276  EURAUD  N1_bb_sl2.0x_mintp5        EXCL 23:30-00:30     631 -0.84  -528.85            -82.19          0.48  -2.27   0.49
+277  EURAUD  N1_bb_sl2.0x_mintp5    SAME-BAR trades only       5  7.11    35.55              5.52        100.00    NaN    NaN
+278  EURAUD  N1_bb_sl2.0x_mintp5    EXCL same-bar trades     851  0.71   607.90             94.48          0.00  -0.39   1.88
+297  EURAUD   N2_limit_tp10_sl20             21:00-22:00     241  1.18   284.90             32.72          4.56    NaN    NaN
+298  EURAUD   N2_limit_tp10_sl20             22:00-23:00      61  2.24   136.90             15.72          4.92    NaN    NaN
+299  EURAUD   N2_limit_tp10_sl20             23:00-23:30      22  2.72    59.80              6.87          4.55    NaN    NaN
+300  EURAUD   N2_limit_tp10_sl20  23:30-00:30 (rollover)      55  7.30   401.50             46.12          9.09    NaN    NaN
+301  EURAUD   N2_limit_tp10_sl20             00:30-02:00      45 -0.28   -12.50             -1.44          0.00    NaN    NaN
+302  EURAUD   N2_limit_tp10_sl20                     ALL     424  2.05   870.60            100.00          4.72   0.92   3.24
+303  EURAUD   N2_limit_tp10_sl20        EXCL 23:30-00:30     369  1.27   469.10             53.88          4.07  -0.01   2.48
+304  EURAUD   N2_limit_tp10_sl20    SAME-BAR trades only      20  6.40   128.00             14.70        100.00    NaN    NaN
+305  EURAUD   N2_limit_tp10_sl20    EXCL same-bar trades     404  1.84   742.60             85.30          0.00   0.62   3.01

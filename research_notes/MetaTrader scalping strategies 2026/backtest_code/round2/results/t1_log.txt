@@ -1,0 +1,93 @@
+XAUUSD: 1068700 M1 bars; 742 server weekdays from 2024-01-02 to 2026-11-04 (2.9s)
+
+== base and variants
+  base_buf20_tp2.5_be1.5_w03-08_x21    elig= 610 fills= 603 trades= 603 gross= +325.5pt  reasons={'time': 253, 'SL': 245, 'TP': 75, 'BE': 30}
+  buf0_tp2.5_be1.5_w03-08_x21          elig= 610 fills= 603 trades= 603 gross= +326.2pt  reasons={'SL': 246, 'time': 246, 'TP': 75, 'BE': 36}
+  buf50_tp2.5_be1.5_w03-08_x21         elig= 610 fills= 601 trades= 601 gross= +322.9pt  reasons={'time': 263, 'SL': 242, 'TP': 73, 'BE': 23}
+  buf20_tp1.5_be1.5_w03-08_x21         elig= 610 fills= 603 trades= 603 gross= +239.9pt  reasons={'SL': 245, 'TP': 179, 'time': 178, 'BE': 1}
+  buf20_tp2.0_be1.5_w03-08_x21         elig= 610 fills= 603 trades= 603 gross= +257.2pt  reasons={'SL': 245, 'time': 219, 'TP': 111, 'BE': 28}
+  buf20_tp3.0_be1.5_w03-08_x21         elig= 610 fills= 603 trades= 603 gross= +317.1pt  reasons={'time': 284, 'SL': 245, 'TP': 43, 'BE': 31}
+  buf20_tp1.5_beOFF_w03-08_x21         elig= 610 fills= 603 trades= 603 gross= +246.0pt  reasons={'SL': 245, 'TP': 180, 'time': 178}
+  buf20_tp2.0_beOFF_w03-08_x21         elig= 610 fills= 603 trades= 603 gross= +269.1pt  reasons={'SL': 255, 'time': 231, 'TP': 117}
+  buf20_tp2.5_beOFF_w03-08_x21         elig= 610 fills= 603 trades= 603 gross= +336.5pt  reasons={'time': 268, 'SL': 256, 'TP': 79}
+  buf20_tp3.0_beOFF_w03-08_x21         elig= 610 fills= 603 trades= 603 gross= +322.8pt  reasons={'time': 301, 'SL': 257, 'TP': 45}
+  buf20_tp2.5_be1.5_w03-08_x12         elig= 610 fills= 526 trades= 526 gross= +362.1pt  reasons={'SL': 219, 'time': 206, 'TP': 72, 'BE': 29}
+  buf20_tp2.5_be1.5_w03-08_x16         elig= 610 fills= 578 trades= 578 gross= +349.6pt  reasons={'SL': 240, 'time': 233, 'TP': 75, 'BE': 30}
+  buf20_tp2.5_be1.5_w02-07_x21         elig= 586 fills= 582 trades= 582 gross= +298.6pt  reasons={'time': 240, 'SL': 236, 'TP': 70, 'BE': 36}
+  buf20_tp2.5_be1.5_w04-09_x21         elig= 620 fills= 608 trades= 608 gross= +213.4pt  reasons={'time': 265, 'SL': 250, 'TP': 69, 'BE': 24}
+  buf20_tp2.5_be1.5_w03-08_x21_noRangeFilter elig= 742 fills= 722 trades= 722 gross= +312.2pt  reasons={'SL': 301, 'time': 272, 'TP': 104, 'BE': 45}
+
+== one-sided / trend-filtered versions
+  base_long_only                       elig= 610 fills= 436 trades= 436 gross= +188.7pt  reasons={'time': 210, 'SL': 167, 'TP': 43, 'BE': 16}
+  base_short_only                      elig= 610 fills= 374 trades= 374 gross= +269.5pt  reasons={'SL': 159, 'time': 150, 'TP': 44, 'BE': 21}
+  base_trend_only                      elig= 610 fills= 403 trades= 403 gross= +325.6pt  reasons={'time': 185, 'SL': 156, 'TP': 48, 'BE': 14}
+  base_counter_only                    elig= 610 fills= 379 trades= 379 gross= +142.1pt  reasons={'time': 161, 'SL': 158, 'TP': 37, 'BE': 23}
+
+== random direction (50 seeds)
+            mean_exp         p05        p95    mean_R   mean_pf  frac_pos
+cost_case                                                                
+base42    -41.002102 -185.072708  56.175435 -0.030522  0.960243      0.32
+exp50     -49.002102 -193.072708  48.175435 -0.035474  0.952329      0.22
+gross       0.997898 -143.072708  98.175435 -0.004524  1.003141      0.50
+spread15  -14.002102 -158.072708  83.175435 -0.013809  0.987556      0.44
+
+== buy-and-hold / intraday long benchmarks
+                                benchmark   period  start_px  end_px  pnl_points  return_pct  max_dd_pct    sharpe  n_days  mean_points_per_day  total_points   win_rate        ci_lo       ci_hi
+0                            buy_and_hold  overall    2064.3  4060.7    199640.0   96.710749   28.455375  1.189642     743                  NaN           NaN        NaN          NaN         NaN
+1                            buy_and_hold     2024    2064.3  2624.3     56000.0   27.127840    8.044204  1.649304     261                  NaN           NaN        NaN          NaN         NaN
+2                            buy_and_hold     2025    2624.3  4318.9    169460.0   64.573410    9.781685  2.647832     261                  NaN           NaN        NaN          NaN         NaN
+3                            buy_and_hold     2026    4318.9  4060.7    -25820.0   -5.978374   28.455375 -0.097491     221                  NaN           NaN        NaN          NaN         NaN
+4        intraday_long_0800_2100_all_days  overall       NaN     NaN         NaN         NaN         NaN       NaN     742           -30.202156      -22410.0  52.964960  -335.597372  264.161051
+5        intraday_long_0800_2100_all_days     2024       NaN     NaN         NaN         NaN         NaN       NaN     261            42.222222       11020.0  51.340996  -186.841954  270.008621
+6        intraday_long_0800_2100_all_days     2025       NaN     NaN         NaN         NaN         NaN       NaN     261           192.950192       50360.0  55.172414  -271.735632  601.625479
+7        intraday_long_0800_2100_all_days     2026       NaN     NaN         NaN         NaN         NaN       NaN     220          -380.863636      -83790.0  52.272727 -1261.893182  391.153409
+8   intraday_long_0800_2100_eligible_days  overall       NaN     NaN         NaN         NaN         NaN       NaN     610           -58.983607      -35980.0  52.295082  -358.662705  239.929098
+9   intraday_long_0800_2100_eligible_days     2024       NaN     NaN         NaN         NaN         NaN       NaN     194            15.463918        3000.0  51.546392  -241.676546  276.158505
+10  intraday_long_0800_2100_eligible_days     2025       NaN     NaN         NaN         NaN         NaN       NaN     228           233.596491       53260.0  54.824561  -194.525219  681.975877
+11  intraday_long_0800_2100_eligible_days     2026       NaN     NaN         NaN         NaN         NaN       NaN     188          -490.638298      -92240.0  50.000000 -1226.062500  224.832447
+      days  median_rng_pct  mean_rng_usd  pct_below_0_30  pct_above_1_60   mean_price
+year                                                                                 
+2024   261        0.412117     11.643678       23.754789        1.915709  2388.653257
+2025   261        0.637227     26.093487        7.662835        4.980843  3442.433333
+2026   220        0.930894     51.496364        0.909091       13.636364  4495.811818
+
+== sensitivity grid
+  w02-07 buf0 tp1.5: n=583 base42 exp=+210.0 CI[+24,+394] PF=1.25
+  w02-07 buf0 tp2.0: n=583 base42 exp=+245.9 CI[+45,+438] PF=1.29
+  w02-07 buf0 tp2.5: n=583 base42 exp=+274.7 CI[+70,+485] PF=1.32
+  w02-07 buf0 tp3.0: n=583 base42 exp=+273.1 CI[+61,+485] PF=1.32
+  w02-07 buf20 tp1.5: n=582 base42 exp=+193.8 CI[+18,+388] PF=1.22
+  w02-07 buf20 tp2.0: n=582 base42 exp=+230.3 CI[+47,+444] PF=1.27
+  w02-07 buf20 tp2.5: n=582 base42 exp=+256.6 CI[+63,+491] PF=1.30
+  w02-07 buf20 tp3.0: n=582 base42 exp=+261.0 CI[+56,+500] PF=1.30
+  w02-07 buf50 tp1.5: n=582 base42 exp=+179.2 CI[-5,+370] PF=1.21
+  w02-07 buf50 tp2.0: n=582 base42 exp=+235.5 CI[+43,+450] PF=1.27
+  w02-07 buf50 tp2.5: n=582 base42 exp=+247.3 CI[+50,+474] PF=1.28
+  w02-07 buf50 tp3.0: n=582 base42 exp=+258.3 CI[+47,+492] PF=1.30
+  w03-08 buf0 tp1.5: n=603 base42 exp=+208.7 CI[+24,+377] PF=1.25
+  w03-08 buf0 tp2.0: n=603 base42 exp=+223.4 CI[+46,+411] PF=1.27
+  w03-08 buf0 tp2.5: n=603 base42 exp=+284.2 CI[+94,+485] PF=1.34
+  w03-08 buf0 tp3.0: n=603 base42 exp=+282.9 CI[+91,+496] PF=1.34
+  w03-08 buf20 tp1.5: n=603 base42 exp=+197.9 CI[+15,+373] PF=1.23
+  w03-08 buf20 tp2.0: n=603 base42 exp=+215.2 CI[+33,+407] PF=1.25
+  w03-08 buf20 tp2.5: n=603 base42 exp=+283.5 CI[+93,+477] PF=1.33
+  w03-08 buf20 tp3.0: n=603 base42 exp=+275.1 CI[+79,+484] PF=1.32
+  w03-08 buf50 tp1.5: n=601 base42 exp=+173.3 CI[+0,+342] PF=1.20
+  w03-08 buf50 tp2.0: n=601 base42 exp=+224.3 CI[+30,+409] PF=1.26
+  w03-08 buf50 tp2.5: n=601 base42 exp=+280.9 CI[+70,+475] PF=1.33
+  w03-08 buf50 tp3.0: n=601 base42 exp=+281.7 CI[+75,+491] PF=1.33
+  w04-09 buf0 tp1.5: n=608 base42 exp=+132.1 CI[-38,+311] PF=1.15
+  w04-09 buf0 tp2.0: n=608 base42 exp=+171.1 CI[-12,+369] PF=1.20
+  w04-09 buf0 tp2.5: n=608 base42 exp=+180.0 CI[-13,+386] PF=1.21
+  w04-09 buf0 tp3.0: n=608 base42 exp=+168.2 CI[-26,+372] PF=1.20
+  w04-09 buf20 tp1.5: n=608 base42 exp=+110.5 CI[-65,+287] PF=1.13
+  w04-09 buf20 tp2.0: n=608 base42 exp=+155.1 CI[-31,+357] PF=1.18
+  w04-09 buf20 tp2.5: n=608 base42 exp=+171.4 CI[-19,+381] PF=1.20
+  w04-09 buf20 tp3.0: n=608 base42 exp=+156.1 CI[-48,+360] PF=1.18
+  w04-09 buf50 tp1.5: n=608 base42 exp=+95.6 CI[-79,+279] PF=1.11
+  w04-09 buf50 tp2.0: n=608 base42 exp=+148.8 CI[-37,+346] PF=1.17
+  w04-09 buf50 tp2.5: n=608 base42 exp=+161.5 CI[-30,+376] PF=1.18
+  w04-09 buf50 tp3.0: n=608 base42 exp=+157.9 CI[-47,+370] PF=1.18
+cells positive after base costs: 36 of 36 ; CI excludes zero (positive): 23 ; CI entirely negative: 0
+
+DONE T1 in 30.9s

@@ -1,0 +1,90 @@
+
+===== AUDNZD: 1074626 M1 bars, 215012 M5 bars, window bars 39108 (3.4s)
+  N1_bb_sl1.5x_mintp0        trades= 1725 gross= +1.54 pips  avg stop=  6.0  reasons={'TP': 1209, 'SL': 495, 'time': 21}  bars=41
+  N1_bb_sl1.5x_mintp5        trades=  408 gross= +3.83 pips  avg stop= 12.2  reasons={'TP': 312, 'SL': 77, 'time': 19}  bars=76
+  N1_bb_sl2.0x_mintp0        trades= 1641 gross= +1.94 pips  avg stop=  8.0  reasons={'TP': 1271, 'SL': 345, 'time': 25}  bars=47
+  N1_bb_sl2.0x_mintp5        trades=  401 gross= +4.41 pips  avg stop= 16.1  reasons={'TP': 325, 'SL': 53, 'time': 23}  bars=85
+  N2_limit_tp6_sl12          trades=  669 gross= +3.55 pips  avg stop= 12.0  reasons={'TP': 568, 'SL': 93, 'time': 8}  bars=92
+  N2_limit_tp10_sl20         trades=  658 gross= +4.63 pips  avg stop= 20.0  reasons={'TP': 485, 'time': 96, 'SL': 77}  bars=192
+  N3_rsi2_night              trades=  909 gross= +0.44 pips  avg stop=  4.1  reasons={'time': 692, 'SL': 217}  bars=15
+  N3_rsi2_allday             trades= 5212 gross= +0.32 pips  avg stop=  4.8  reasons={'time': 4098, 'SL': 1114}  bars=16
+  AUDNZD done in 33.1s
+
+===== EURCHF: 1074558 M1 bars, 215000 M5 bars, window bars 39096 (2.4s)
+  N1_bb_sl1.5x_mintp0        trades= 1372 gross= +1.47 pips  avg stop=  5.9  reasons={'TP': 923, 'SL': 377, 'time': 72}  bars=69
+  N1_bb_sl1.5x_mintp5        trades=  279 gross= +4.02 pips  avg stop= 13.8  reasons={'TP': 188, 'time': 50, 'SL': 41}  bars=144
+  N1_bb_sl2.0x_mintp0        trades= 1292 gross= +1.68 pips  avg stop=  7.8  reasons={'TP': 944, 'SL': 257, 'time': 91}  bars=81
+  N1_bb_sl2.0x_mintp5        trades=  270 gross= +4.09 pips  avg stop= 18.2  reasons={'TP': 184, 'time': 62, 'SL': 24}  bars=161
+  N2_limit_tp6_sl12          trades=  473 gross= +2.70 pips  avg stop= 12.0  reasons={'TP': 334, 'time': 82, 'SL': 57}  bars=167
+  N2_limit_tp10_sl20         trades=  469 gross= +3.17 pips  avg stop= 20.0  reasons={'time': 230, 'TP': 214, 'SL': 25}  bars=308
+  N3_rsi2_night              trades= 1155 gross= +0.54 pips  avg stop=  3.4  reasons={'time': 931, 'SL': 224}  bars=15
+  N3_rsi2_allday             trades= 5952 gross= +0.22 pips  avg stop=  4.0  reasons={'time': 4570, 'SL': 1382}  bars=15
+  EURCHF done in 25.6s
+
+===== EURGBP: 1074665 M1 bars, 215018 M5 bars, window bars 39115 (2.3s)
+  N1_bb_sl1.5x_mintp0        trades= 1235 gross= +1.10 pips  avg stop=  4.4  reasons={'TP': 864, 'SL': 310, 'time': 61}  bars=74
+  N1_bb_sl1.5x_mintp5        trades=  132 gross= +2.73 pips  avg stop= 12.6  reasons={'TP': 75, 'time': 32, 'SL': 25}  bars=183
+  N1_bb_sl2.0x_mintp0        trades= 1179 gross= +1.23 pips  avg stop=  5.9  reasons={'TP': 879, 'SL': 219, 'time': 81}  bars=86
+  N1_bb_sl2.0x_mintp5        trades=  129 gross= +3.00 pips  avg stop= 16.8  reasons={'TP': 76, 'time': 38, 'SL': 15}  bars=202
+  N2_limit_tp6_sl12          trades=  432 gross= +2.08 pips  avg stop= 12.0  reasons={'TP': 215, 'time': 193, 'SL': 24}  bars=291
+  N2_limit_tp10_sl20         trades=  428 gross= +1.82 pips  avg stop= 20.0  reasons={'time': 341, 'TP': 80, 'SL': 7}  bars=406
+  N3_rsi2_night              trades= 1272 gross= +0.36 pips  avg stop=  2.5  reasons={'time': 1054, 'SL': 218}  bars=15
+  N3_rsi2_allday             trades= 6232 gross= +0.09 pips  avg stop=  3.1  reasons={'time': 4866, 'SL': 1366}  bars=15
+  EURGBP done in 24.6s
+
+===== AUDCAD: 1074561 M1 bars, 215008 M5 bars, window bars 39104 (2.0s)
+  N1_bb_sl1.5x_mintp0        trades= 1448 gross= +1.31 pips  avg stop=  7.6  reasons={'TP': 945, 'SL': 457, 'time': 46}  bars=75
+  N1_bb_sl1.5x_mintp5        trades=  460 gross= +2.71 pips  avg stop= 14.8  reasons={'TP': 297, 'SL': 120, 'time': 43}  bars=145
+  N1_bb_sl2.0x_mintp0        trades= 1366 gross= +1.44 pips  avg stop= 10.1  reasons={'TP': 976, 'SL': 331, 'time': 59}  bars=86
+  N1_bb_sl2.0x_mintp5        trades=  442 gross= +2.74 pips  avg stop= 19.7  reasons={'TP': 300, 'SL': 88, 'time': 54}  bars=161
+  N2_limit_tp6_sl12          trades=  467 gross= +2.24 pips  avg stop= 12.0  reasons={'TP': 360, 'SL': 89, 'time': 18}  bars=137
+  N2_limit_tp10_sl20         trades=  463 gross= +1.90 pips  avg stop= 20.0  reasons={'TP': 285, 'time': 106, 'SL': 72}  bars=258
+  N3_rsi2_night              trades= 1211 gross= +0.54 pips  avg stop=  3.9  reasons={'time': 942, 'SL': 269}  bars=15
+  N3_rsi2_allday             trades= 5990 gross= +0.27 pips  avg stop=  4.8  reasons={'time': 4474, 'SL': 1516}  bars=15
+  AUDCAD done in 26.1s
+
+===== GBPCAD: 1074616 M1 bars, 215002 M5 bars, window bars 39099 (2.2s)
+  N1_bb_sl1.5x_mintp0        trades= 1384 gross= +2.03 pips  avg stop= 12.0  reasons={'TP': 885, 'SL': 385, 'time': 113, 'end': 1}  bars=87
+  N1_bb_sl1.5x_mintp5        trades=  840 gross= +2.98 pips  avg stop= 16.8  reasons={'TP': 531, 'SL': 197, 'time': 111, 'end': 1}  bars=126
+  N1_bb_sl2.0x_mintp0        trades= 1319 gross= +2.18 pips  avg stop= 15.9  reasons={'TP': 912, 'SL': 274, 'time': 133}  bars=98
+  N1_bb_sl2.0x_mintp5        trades=  804 gross= +3.11 pips  avg stop= 22.2  reasons={'TP': 536, 'SL': 135, 'time': 132, 'end': 1}  bars=142
+  N2_limit_tp6_sl12          trades=  390 gross= +1.42 pips  avg stop= 12.0  reasons={'TP': 285, 'SL': 97, 'time': 8}  bars=58
+  N2_limit_tp10_sl20         trades=  390 gross= +2.20 pips  avg stop= 20.0  reasons={'TP': 253, 'SL': 74, 'time': 63}  bars=160
+  N3_rsi2_night              trades= 1089 gross= +0.89 pips  avg stop=  7.1  reasons={'time': 873, 'SL': 216}  bars=15
+  N3_rsi2_allday             trades= 5449 gross= +0.43 pips  avg stop=  7.9  reasons={'time': 4177, 'SL': 1272}  bars=16
+  GBPCAD done in 24.8s
+
+===== NZDCAD: 1074538 M1 bars, 215006 M5 bars, window bars 39103 (2.1s)
+  N1_bb_sl1.5x_mintp0        trades= 1542 gross= +1.49 pips  avg stop=  7.3  reasons={'TP': 1048, 'SL': 453, 'time': 41}  bars=65
+  N1_bb_sl1.5x_mintp5        trades=  514 gross= +2.83 pips  avg stop= 13.3  reasons={'TP': 347, 'SL': 127, 'time': 40}  bars=120
+  N1_bb_sl2.0x_mintp0        trades= 1452 gross= +1.50 pips  avg stop=  9.7  reasons={'TP': 1049, 'SL': 351, 'time': 52}  bars=75
+  N1_bb_sl2.0x_mintp5        trades=  495 gross= +2.88 pips  avg stop= 17.5  reasons={'TP': 349, 'SL': 91, 'time': 55}  bars=136
+  N2_limit_tp6_sl12          trades=  521 gross= +1.58 pips  avg stop= 12.0  reasons={'TP': 384, 'SL': 122, 'time': 15}  bars=116
+  N2_limit_tp10_sl20         trades=  519 gross= +1.52 pips  avg stop= 20.0  reasons={'TP': 317, 'time': 107, 'SL': 95}  bars=235
+  N3_rsi2_night              trades= 1244 gross= +0.44 pips  avg stop=  3.8  reasons={'time': 935, 'SL': 308, 'end': 1}  bars=15
+  N3_rsi2_allday             trades= 6162 gross= +0.17 pips  avg stop=  4.4  reasons={'time': 4547, 'SL': 1614, 'end': 1}  bars=15
+  NZDCAD done in 25.7s
+
+===== EURAUD: 1074724 M1 bars, 215019 M5 bars, window bars 39116 (2.1s)
+  N1_bb_sl1.5x_mintp0        trades= 1545 gross= +1.89 pips  avg stop= 12.0  reasons={'TP': 1024, 'SL': 486, 'time': 34, 'end': 1}  bars=64
+  N1_bb_sl1.5x_mintp5        trades=  910 gross= +2.86 pips  avg stop= 17.1  reasons={'TP': 619, 'SL': 256, 'time': 34, 'end': 1}  bars=93
+  N1_bb_sl2.0x_mintp0        trades= 1448 gross= +1.98 pips  avg stop= 15.9  reasons={'TP': 1047, 'SL': 356, 'time': 44, 'end': 1}  bars=76
+  N1_bb_sl2.0x_mintp5        trades=  856 gross= +2.85 pips  avg stop= 22.6  reasons={'TP': 618, 'SL': 193, 'time': 44, 'end': 1}  bars=108
+  N2_limit_tp6_sl12          trades=  424 gross= +2.23 pips  avg stop= 12.0  reasons={'TP': 333, 'SL': 91}  bars=54
+  N2_limit_tp10_sl20         trades=  424 gross= +4.15 pips  avg stop= 20.0  reasons={'TP': 333, 'SL': 80, 'time': 11}  bars=126
+  N3_rsi2_night              trades= 1114 gross= +1.39 pips  avg stop=  6.6  reasons={'time': 883, 'SL': 231}  bars=15
+  N3_rsi2_allday             trades= 5325 gross= +0.38 pips  avg stop=  9.2  reasons={'time': 3951, 'SL': 1374}  bars=16
+  EURAUD done in 25.1s
+
+===== EURUSD: 1074945 M1 bars, 215039 M5 bars, window bars 39135 (2.2s)
+  N1_bb_sl1.5x_mintp0        trades= 1181 gross= +0.49 pips  avg stop=  9.6  reasons={'TP': 692, 'SL': 388, 'time': 101}  bars=116
+  N1_bb_sl1.5x_mintp5        trades=  503 gross= +0.77 pips  avg stop= 16.9  reasons={'TP': 258, 'SL': 146, 'time': 99}  bars=192
+  N1_bb_sl2.0x_mintp0        trades= 1113 gross= +0.60 pips  avg stop= 12.9  reasons={'TP': 694, 'SL': 285, 'time': 134}  bars=135
+  N1_bb_sl2.0x_mintp5        trades=  492 gross= +1.05 pips  avg stop= 22.4  reasons={'TP': 265, 'time': 129, 'SL': 98}  bars=215
+  N2_limit_tp6_sl12          trades=  392 gross= +0.12 pips  avg stop= 12.0  reasons={'TP': 244, 'SL': 109, 'time': 39}  bars=159
+  N2_limit_tp10_sl20         trades=  392 gross= -0.32 pips  avg stop= 20.0  reasons={'TP': 179, 'time': 140, 'SL': 73}  bars=283
+  N3_rsi2_night              trades= 1402 gross= +0.42 pips  avg stop=  3.7  reasons={'time': 1064, 'SL': 337, 'end': 1}  bars=16
+  N3_rsi2_allday             trades= 6367 gross= +0.29 pips  avg stop=  5.0  reasons={'time': 4662, 'SL': 1704, 'end': 1}  bars=15
+  EURUSD done in 25.4s
+
+DONE T3 in 222.5s

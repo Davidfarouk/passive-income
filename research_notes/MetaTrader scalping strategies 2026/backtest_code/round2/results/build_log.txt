@@ -1,0 +1,91 @@
+zip files: 1047 20231224.zip -> 20261104.zip
+unreadable zips: 0 []
+
+INSTRUMENT INVENTORY (instrument: number of daily files containing it, of 1047):
+  AUDCAD   897
+  AUDCHF   897
+  AUDJPY   897
+  AUDNZD   897
+  AUDUSD   897
+  BRNUSD   498
+  BTCEUR   1047
+  BTCUSD   1047
+  CADCHF   897
+  CADJPY   897
+  CHFJPY   897
+  DJIUSD   772
+  ETHEUR   1047
+  ETHUSD   1047
+  EURAUD   897
+  EURCAD   897
+  EURCHF   897
+  EURCNH   845
+  EURCZK   897
+  EURDKK   897
+  EURGBP   897
+  EURHKD   896
+  EURHUF   896
+  EURILS   807
+  EURJPY   897
+  EURMXN   889
+  EURNOK   877
+  EURNZD   897
+  EURPLN   896
+  EURRUB   615
+  EURSEK   897
+  EURSGD   897
+  EURTRY   895
+  EURUSD   897
+  EURZAR   886
+  GASUSD   497
+  GBPAUD   897
+  GBPCAD   897
+  GBPCHF   897
+  GBPJPY   897
+  GBPNZD   897
+  GBPUSD   897
+  LTCEUR   1047
+  LTCUSD   1047
+  NDQUSD   772
+  NZDCAD   897
+  NZDCHF   897
+  NZDJPY   897
+  NZDUSD   897
+  SPXUSD   772
+  USDCAD   897
+  USDCHF   897
+  USDCNH   845
+  USDCZK   897
+  USDDKK   897
+  USDHKD   896
+  USDHUF   896
+  USDILS   807
+  USDJPY   897
+  USDMXN   889
+  USDNOK   877
+  USDPLN   896
+  USDRUB   615
+  USDSEK   897
+  USDSGD   897
+  USDTRY   895
+  USDZAR   886
+  USXUSD   897
+  WTIUSD   421
+  XAGEUR   794
+  XAGUSD   794
+  XAUEUR   794
+  XAUUSD   794
+
+=== AUDNZD: rows=1074626 (raw 1074626, DST-NaT dropped 0, dups 0, bad OHLC 0); range 2023-12-24 22:00:00 -> 2026-11-04 22:59:00; price min/max 1.0566/1.2597; max decimals 4; bars by weekday {0: 214110, 1: 215979, 2: 215932, 3: 214460, 4: 191093, 6: 23052}; weekday gaps>60min 0
+
+=== EURCHF: rows=1074558 (raw 1074558, DST-NaT dropped 0, dups 0, bad OHLC 0); range 2023-12-24 22:00:00 -> 2026-11-04 22:59:00; price min/max 0.8978/0.9928; max decimals 4; bars by weekday {0: 214105, 1: 215970, 2: 215921, 3: 214456, 4: 191078, 6: 23028}; weekday gaps>60min 0
+
+=== EURGBP: rows=1074665 (raw 1074665, DST-NaT dropped 0, dups 0, bad OHLC 0); range 2023-12-24 22:00:00 -> 2026-11-04 22:59:00; price min/max 0.8221/0.8863; max decimals 4; bars by weekday {0: 214106, 1: 215976, 2: 215920, 3: 214432, 4: 191088, 6: 23143}; weekday gaps>60min 0
+
+=== AUDCAD: rows=1074561 (raw 1074561, DST-NaT dropped 0, dups 0, bad OHLC 0); range 2023-12-24 22:00:00 -> 2026-11-04 22:59:00; price min/max 0.8438/1.0009; max decimals 4; bars by weekday {0: 214101, 1: 215970, 2: 215922, 3: 214451, 4: 191081, 6: 23036}; weekday gaps>60min 0
+
+=== GBPCAD: rows=1074616 (raw 1074616, DST-NaT dropped 0, dups 0, bad OHLC 0); range 2023-12-24 22:00:00 -> 2026-11-04 22:59:00; price min/max 1.6757/1.904; max decimals 4; bars by weekday {0: 214117, 1: 215980, 2: 215923, 3: 214461, 4: 191095, 6: 23040}; weekday gaps>60min 0
+
+=== NZDCAD: rows=1074538 (raw 1074538, DST-NaT dropped 0, dups 0, bad OHLC 0); range 2023-12-24 22:00:00 -> 2026-11-04 22:59:00; price min/max 0.7806/0.8609; max decimals 4; bars by weekday {0: 214101, 1: 215974, 2: 215921, 3: 214449, 4: 191075, 6: 23018}; weekday gaps>60min 0
+
+=== EURAUD: rows=1074724 (raw 1074724, DST-NaT dropped 0, dups 0, bad OHLC 0); range 2023-12-24 22:00:00 -> 2026-11-04 22:59:00; price min/max 1.5774/1.8551; max decimals 4; bars by weekday {0: 214113, 1: 215979, 2: 215926, 3: 214464, 4: 191098, 6: 23144}; weekday gaps>60min 0

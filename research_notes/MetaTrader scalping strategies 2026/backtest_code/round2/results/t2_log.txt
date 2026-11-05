@@ -1,0 +1,32 @@
+
+XAUUSD: 1068700 bars, 742 server weekdays; median daily ATR(14) = 4755 points
+  atr_x12_tp1.8                elig= 643 fills= 272 trades= 272 gross= +512.33 avgR=6762.2 reasons={'time': 260, 'SL': 7, 'TP': 5}
+  atr_x21_tp1.8                elig= 643 fills= 561 trades= 561 gross= +345.53 avgR=7364.9 reasons={'time': 542, 'SL': 14, 'TP': 5}
+  atr_x12_tp1.0                elig= 643 fills= 272 trades= 272 gross= +356.84 avgR=6762.2 reasons={'time': 253, 'TP': 12, 'SL': 7}
+  atr_x12_tp2.5                elig= 643 fills= 272 trades= 272 gross= +439.39 avgR=6762.2 reasons={'time': 265, 'SL': 7}
+  atr_x12_tp1.8_noFilter       elig= 733 fills= 300 trades= 300 gross= +397.53 avgR=7011.8 reasons={'time': 280, 'SL': 13, 'TP': 7}
+  atr_x12_tp1.8_long_only      elig= 643 fills= 139 trades= 139 gross=  +99.33 avgR=6343.3 reasons={'time': 135, 'SL': 4}
+  atr_x12_tp1.8_short_only     elig= 643 fills= 133 trades= 133 gross= +943.97 avgR=7200.0 reasons={'time': 125, 'TP': 5, 'SL': 3}
+            mean_exp         p05         p95  frac_pos
+cost_case                                             
+base42     48.618404 -217.786155  340.204628      0.54
+exp50      40.618404 -225.786155  332.204628      0.54
+gross      90.618404 -175.786155  382.204628      0.62
+spread15   75.618404 -190.786155  367.204628      0.60
+
+EURUSD: 1074945 bars, 742 server weekdays; median daily ATR(14) = 63 pips
+  atr_x12_tp1.8                elig= 658 fills= 365 trades= 365 gross=   +1.24 avgR=80.8 reasons={'time': 351, 'SL': 12, 'TP': 2}
+  atr_x21_tp1.8                elig= 658 fills= 629 trades= 629 gross=   +0.32 avgR=80.4 reasons={'time': 610, 'SL': 17, 'TP': 2}
+  atr_x12_tp1.0                elig= 658 fills= 365 trades= 365 gross=   +0.52 avgR=80.8 reasons={'time': 338, 'TP': 15, 'SL': 12}
+  atr_x12_tp2.5                elig= 658 fills= 365 trades= 365 gross=   +1.43 avgR=80.8 reasons={'time': 352, 'SL': 12, 'TP': 1}
+  atr_x12_tp1.8_noFilter       elig= 733 fills= 406 trades= 406 gross=   +0.75 avgR=80.9 reasons={'time': 388, 'SL': 16, 'TP': 2}
+  atr_x12_tp1.8_long_only      elig= 658 fills= 190 trades= 190 gross=   +1.91 avgR=83.0 reasons={'time': 185, 'SL': 3, 'TP': 2}
+  atr_x12_tp1.8_short_only     elig= 658 fills= 185 trades= 185 gross=   +1.05 avgR=78.3 reasons={'time': 176, 'SL': 9}
+           mean_exp       p05       p95  frac_pos
+cost_case                                        
+base1.2   -1.254963 -3.945508  1.250619      0.24
+cheap0.8  -0.854963 -3.545508  1.650619      0.32
+exp2.1    -2.154963 -4.845508  0.350619      0.06
+gross     -0.054963 -2.745508  2.450619      0.50
+
+DONE T2 in 19.2s
