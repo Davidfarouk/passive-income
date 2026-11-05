@@ -319,3 +319,20 @@ session open, slippage on stop orders, requotes, server-time mistakes and plain 
 trade this, do it first on a demo account, then with money you can afford to lose entirely, and keep
 your own records. Nobody in the sources this was built from has published an audited multi-year live
 track record for a London-range breakout.
+
+## Preset matching the independently backtested rule set
+
+`LondonRangeBreakout_XAUUSD_exact_tested.set` reproduces the exact configuration that was
+backtested in `../independent_backtest_round2.md` (test T1) on Forexite M1 data from January 2024
+to November 2026: Asian range 03:00-08:00 server time, OCO stop orders at 08:00, stop-loss at the far
+side of the range capped at 0.60% of price, take-profit 2.5R, break-even at 1.5R, everything flat at
+21:00 server, one trade per day, range filter 0.30%-1.60% of price, 1% risk. The hours assume a broker
+server on New York time + 7 hours (UTC+2 in winter, UTC+3 in US summer); shift them if your server
+differs.
+
+Read the round-two backtest before using it. After 42-point round-trip costs the rule set produced a
+profit factor of 1.33 over 603 trades with a 21.5% maximum drawdown at 1% risk, and it beat random-direction
+entries, but about two thirds of the net profit came from 2026 alone, the 2024-2025 result was not
+statistically distinguishable from zero, and the profit sits almost entirely in days whose Asian range
+exceeded 0.6% of price. Treat it as a hypothesis to re-test on your own broker's real ticks with
+commission enabled, not as a validated edge.

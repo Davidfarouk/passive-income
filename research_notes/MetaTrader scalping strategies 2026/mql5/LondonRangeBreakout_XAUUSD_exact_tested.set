@@ -1,0 +1,49 @@
+; LondonRangeBreakout - XAUUSD preset reproducing the EXACT rule set that was backtested
+; independently in research_notes/.../independent_backtest_round2.md (test T1):
+;   Asian range 03:00-08:00 server, OCO stops at 08:00, SL at far side of range capped at 0.60% of price,
+;   TP 2.5R, break-even at 1.5R, unfilled stops deleted and positions closed at 21:00 server,
+;   one trade per day, skip days whose range is <0.30% or >1.60% of price, 1% risk.
+; Hours are BROKER SERVER TIME and assume a server on New York time + 7 h (UTC+2 winter / UTC+3 summer,
+; the convention used by many ECN brokers). On a different server offset shift all hours accordingly.
+; Research only. Backtest result 2024-01 to 2026-11 after 42-point round-trip costs: PF 1.33, 603 trades,
+; max DD 21.5% at 1% risk, but 65% of the net profit came from 2026 alone and 2024-2025 pooled were not
+; statistically distinguishable from zero. NO performance is implied or promised.
+; Format: Name=value||start||step||stop||Y/N  (Y = pre-flagged for optimization; ignored in single tests)
+RangeStartHour=3||0||1||23||N
+RangeStartMinute=0||0||5||55||N
+RangeEndHour=8||5||1||10||N
+RangeEndMinute=0||0||5||55||N
+RangeSource=0||0||0||1||N
+MinRangeBars=30||30||10||120||N
+UseServerTime=true||false||0||true||N
+ServerToUTCOffsetHours=2||2||1||3||N
+TradeStartHour=8||7||1||10||N
+TradeEndHour=21||9||1||21||N
+ForceCloseHour=21||11||1||22||N
+OneTradePerDay=true||false||0||true||N
+MaxTradesPerDay=1||1||1||3||N
+EntryMode=0||0||0||1||N
+BufferPoints=20||0||10||100||Y
+CancelOppositeOnFill=true||false||0||true||N
+BreakoutATRMult=0.15||0.05||0.05||0.5||N
+ATRPeriod=14||7||7||28||N
+MinRangePctOfPrice=0.3||0.1||0.1||0.6||Y
+MaxRangePctOfPrice=1.6||0.8||0.2||2.4||Y
+MinRangePoints=0||0||100||1000||N
+MaxRangePoints=0||0||500||5000||N
+SLMode=0||0||0||1||N
+MaxSLPctOfPrice=0.6||0.3||0.1||1.0||N
+SLATRMult=0.8||0.5||0.1||1.5||N
+TakeProfitR=2.5||1.0||0.25||3.0||Y
+MoveToBreakevenAtR=1.5||0.5||0.25||2.0||Y
+BreakevenOffsetPoints=0||0||5||50||N
+TrailATRMult=0.0||0.0||0.25||2.0||N
+MaxSpreadPoints=80||20||10||150||N
+NewsBlackoutWindows=
+RiskPercent=1.0||0.25||0.25||2.0||N
+FixedLots=0.0||0.0||0.01||1.0||N
+SkipIfStopsLevelViolated=true||false||0||true||N
+MagicNumber=20261105||20261105||1||20261105||N
+DeviationPoints=30||10||10||100||N
+TradeComment=LRB
+PrintVerbose=true||false||0||true||N
