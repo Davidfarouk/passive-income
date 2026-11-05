@@ -1,0 +1,28 @@
+
+===== XAUUSD: 1068700 M1 bars, 2023-12-24 22:00:00 -> 2026-11-04 22:59:00, 743 weekdays, half split at 2025-06-03 11:29:30
+  A_ema9_21_tp1.0              M5  trades= 16044  gross_mean=+6.28  (0.8s)
+  A_ema9_21_tp1.5              M5  trades= 12524  gross_mean=+15.75  (0.5s)
+  A_ema5_13_tp1.0              M5  trades= 23336  gross_mean=+4.37  (0.3s)
+  A_ema5_13_tp1.5              M5  trades= 17237  gross_mean=+13.26  (0.6s)
+  A_ema9_21_tp1.0              M1  trades= 78620  gross_mean=-2.03  (1.3s)
+  A_ema9_21_tp1.5              M1  trades= 65326  gross_mean=+1.28  (1.0s)
+  A_ema5_13_tp1.0              M1  trades=117823  gross_mean=-3.18  (1.0s)
+  A_ema5_13_tp1.5              M1  trades= 93232  gross_mean=-0.24  (1.0s)
+  B_bb20_2                     M5  trades= 10556  gross_mean=+3.40  (0.2s)
+  B_bb20_2_rsi14               M5  trades=  4030  gross_mean=-4.38  (0.5s)
+  B_bb20_2                     M1  trades= 52859  gross_mean=+0.41  (0.9s)
+  B_bb20_2_rsi14               M1  trades= 19002  gross_mean=+1.33  (1.1s)
+  C_asian_range_london_bo      M1  trades=   482  gross_mean=+77.41  (0.1s)
+  D_ny_orb_tp1x_1330utc        M1  trades=   729  gross_mean=-1.50  (0.0s)
+  D_ny_orb_tp1x_nyse0930       M1  trades=   730  gross_mean=+17.97  (0.1s)
+  D_ny_orb_tp2x_1330utc        M1  trades=   729  gross_mean=+14.57  (0.0s)
+  D_ny_orb_tp2x_nyse0930       M1  trades=   730  gross_mean=+15.01  (0.1s)
+  E_rsi2_ema200                M5  trades=  9845  gross_mean=+6.66  (0.4s)
+  E_rsi2_ema200                M1  trades= 48151  gross_mean=+8.46  (1.0s)
+  F_stoch533_ema50             M5  trades=  5717  gross_mean=-4.52  (0.2s)
+  F_stoch533_ema50             M1  trades= 34503  gross_mean=-0.15  (0.9s)
+  H_twap_2sigma_fade           M1  trades= 11418  gross_mean=+1.74  (1.1s)
+  G_random M5: 50 seeds done (12.7s)
+  G_random M1: 50 seeds done (22.3s)
+
+DONE in 305.5 s
