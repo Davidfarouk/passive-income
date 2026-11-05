@@ -1,0 +1,43 @@
+; LondonRangeBreakout - example preset for 2-digit XAUUSD (research only, NO performance implied)
+; Hours are BROKER SERVER TIME. Defaults assume a UTC+0 server or a deliberately pre-London window.
+; On a UTC+2/+3 server London open is ~10:00 server: consider RangeEndHour=10, TradeStartHour=10,
+; TradeEndHour=13, ForceCloseHour=15. See README section 4.
+; Format: Name=value||start||step||stop||Y/N  (Y = pre-flagged for optimization; ignored in single tests)
+RangeStartHour=0||0||1||23||N
+RangeStartMinute=0||0||5||55||N
+RangeEndHour=7||5||1||10||N
+RangeEndMinute=0||0||5||55||N
+RangeSource=0||0||0||1||N
+MinRangeBars=30||30||10||120||N
+UseServerTime=true||false||0||true||N
+ServerToUTCOffsetHours=2||2||1||3||N
+TradeStartHour=7||7||1||10||N
+TradeEndHour=10||9||1||12||N
+ForceCloseHour=12||11||1||22||N
+OneTradePerDay=true||false||0||true||N
+MaxTradesPerDay=2||1||1||3||N
+EntryMode=0||0||0||1||N
+BufferPoints=20||0||10||100||Y
+CancelOppositeOnFill=true||false||0||true||N
+BreakoutATRMult=0.15||0.05||0.05||0.5||N
+ATRPeriod=14||7||7||28||N
+MinRangePctOfPrice=0.3||0.1||0.1||0.6||Y
+MaxRangePctOfPrice=1.6||0.8||0.2||2.4||Y
+MinRangePoints=0||0||100||1000||N
+MaxRangePoints=0||0||500||5000||N
+SLMode=0||0||0||1||N
+MaxSLPctOfPrice=0.6||0.3||0.1||1.0||N
+SLATRMult=0.8||0.5||0.1||1.5||N
+TakeProfitR=1.5||1.0||0.25||3.0||Y
+MoveToBreakevenAtR=1.0||0.5||0.25||2.0||Y
+BreakevenOffsetPoints=0||0||5||50||N
+TrailATRMult=0.0||0.0||0.25||2.0||N
+MaxSpreadPoints=80||20||10||150||N
+NewsBlackoutWindows=
+RiskPercent=1.0||0.25||0.25||2.0||N
+FixedLots=0.0||0.0||0.01||1.0||N
+SkipIfStopsLevelViolated=true||false||0||true||N
+MagicNumber=20261105||20261105||1||20261105||N
+DeviationPoints=30||10||10||100||N
+TradeComment=LRB
+PrintVerbose=true||false||0||true||N
