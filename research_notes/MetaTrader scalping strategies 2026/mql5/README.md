@@ -15,6 +15,7 @@ Files in this folder:
 | `LondonRangeBreakout_XAUUSD.set` | Example input preset for gold (2-digit XAUUSD). |
 | `LondonRangeBreakout_EURUSD.set` | Example input preset for a 5-digit forex major. |
 | `README.md` | This file. |
+| `REVIEW.md` | Desk-review log: what was checked, what was fixed, what still needs MetaEditor. |
 
 No DLLs, no file I/O, no network calls. Single-position logic; runs on hedging and netting accounts.
 
@@ -25,8 +26,9 @@ No DLLs, no file I/O, no network calls. Single-position logic; runs on hedging a
 Every trading day (server time, see section 4 for the time-zone caveat):
 
 1. **Range.** From `RangeStartHour:RangeStartMinute` to `RangeEndHour:RangeEndMinute` it collects the
-   completed M1 bars (or chart-timeframe bars) and records the highest high and lowest low.
-   The range can start on the previous calendar day (e.g. 22:00-07:00).
+   completed M1 bars (or chart-timeframe bars) and records the highest high and lowest low. Only bars
+   that open inside the window *and* close by its end are used, so a chart-timeframe bar that straddles
+   the range end is ignored. The range can start on the previous calendar day (e.g. 22:00-07:00).
 2. **Range filters.** The day is skipped if the range width is below `MinRangePctOfPrice` or above
    `MaxRangePctOfPrice` percent of price (default 0.30 % / 1.60 %), or outside `MinRangePoints` /
    `MaxRangePoints` if those are set. Weekend "days" and days with too few bars are skipped.
@@ -70,7 +72,7 @@ All times are **broker server time** unless `UseServerTime=false` (see section 4
 | `RangeStartHour`, `RangeStartMinute` | 0, 0 | Start of the box. If start >= end the box begins on the previous day. |
 | `RangeEndHour`, `RangeEndMinute` | 7, 0 | End of the box (exclusive). Must be <= `TradeStartHour`. |
 | `RangeSource` | `RANGE_M1` | Build the range from completed M1 bars (recommended) or from the chart timeframe. |
-| `MinRangeBars` | 30 | Skip the day if fewer bars than this fall inside the box (missing data / holiday guard). |
+| `MinRangeBars` | 30 | Skip the day if fewer bars than this fall inside the box (missing data / holiday guard). Counted in bars of `RangeSource`: with `RANGE_CHART_TF` on M15 a 7-hour box holds only 28 bars, so lower this or keep `RANGE_M1`; the EA logs a warning at start-up when the window cannot hold `MinRangeBars` bars. |
 | `UseServerTime` | true | `true`: all hour inputs are server time. `false`: hour inputs are UTC and are shifted by `ServerToUTCOffsetHours` (fixed offset, no DST handling). Keep `true` unless you know what you are doing. |
 | `ServerToUTCOffsetHours` | 2 | Server minus UTC, in hours. Used for the UTC equivalents printed in the log, and for conversion only when `UseServerTime=false`. |
 
@@ -147,14 +149,16 @@ itself at `TradeEndHour`.
 
 1. Copy `LondonRangeBreakout.mq5` to `MQL5\Experts\` (File > Open Data Folder in MT5), open it in
    MetaEditor and press **Compile** (F7). Fix any error the compiler reports before continuing; this
-   source was written without access to a compiler and has not been compiled by its author.
+   source was written without access to a compiler and has not been compiled by its author. It has been
+   desk-reviewed line by line (see `REVIEW.md`, which also lists the few items to confirm in MetaEditor),
+   but a desk review is not a compile.
 2. In MT5 open **View > Strategy Tester** (Ctrl+R). Settings tab:
 
 | Setting | Recommended |
 |---|---|
 | Expert | `LondonRangeBreakout` |
 | Symbol | Your broker's gold symbol (`XAUUSD`, `GOLD`, `XAUUSD.m`...) or `EURUSD`/`GBPUSD`. The symbol must be visible in Market Watch and have tick history. |
-| Timeframe | **M5** or **M15**. The range is built from M1 regardless; the timeframe sets the ATR and, in `ENTRY_CLOSE_BEYOND` mode, the breakout bar. Test both. |
+| Timeframe | **M5** or **M15**. With the default `RangeSource=RANGE_M1` the range is built from M1 regardless; the timeframe sets the ATR and, in `ENTRY_CLOSE_BEYOND` mode, the breakout bar. Test both. |
 | Date | **Custom period**, `2023.01.01` to today. Then also run shorter sub-periods (each calendar year separately). |
 | Forward | `No` for the first run; see section 5. |
 | Delays | Not "zero latency". Use a realistic value for your broker (e.g. 50-200 ms) or "Random delay". |
@@ -288,6 +292,21 @@ Open the **Backtest** (report) tab after a run. The numbers that matter:
 * Range filters use the mid-price of the range for the percent calculation.
 * `MaxSLPctOfPrice` is applied in both SL modes (the specification only required it for the
   opposite-range mode); set it to 0 to disable.
+* SL and TP are absolute prices computed from the intended entry (the stop-order trigger price, or the
+  Ask/Bid at the moment a market order is sent). Slippage on the fill therefore changes the realised R
+  slightly; the EA does not re-anchor SL/TP to the actual fill price. The break-even and trailing logic
+  does use the actual open price.
+* If `TrailATRMult` and `MoveToBreakevenAtR` are both active, the break-even trigger is measured against
+  the *current* stop distance (which the trail may already have tightened), so break-even can arrive a
+  little earlier than "1 R of the initial stop".
+* In `ENTRY_CLOSE_BEYOND` mode a bar that is skipped because of the spread or news filter is not
+  re-evaluated on later ticks; the next bar close is.
+* Start-of-day cleanup: a position still open from a previous day is closed on the first tick and does
+  not count as today's trade; pending orders set up on a previous day are deleted so they cannot block
+  today's stop orders. This only matters live, when the EA was offline at `TradeEndHour`/`ForceCloseHour`.
+* With `OneTradePerDay=false` and `CancelOppositeOnFill=false` on a hedging account both stops can fill;
+  the fill counter is reconciled against the deal history whenever a position closes so `MaxTradesPerDay`
+  still holds.
 
 ---
 

@@ -319,6 +319,8 @@ bool ValidateInputs()
      { Print(LOG_PREFIX, "R / ATR multipliers must be non-negative (SLATRMult > 0)"); ok = false; }
    if(MinRangeBars < 1)
      { Print(LOG_PREFIX, "MinRangeBars must be >= 1"); ok = false; }
+   if(DeviationPoints < 0)
+     { Print(LOG_PREFIX, "DeviationPoints must be >= 0"); ok = false; }
    if(ServerToUTCOffsetHours < -12 || ServerToUTCOffsetHours > 14)
      { Print(LOG_PREFIX, "ServerToUTCOffsetHours out of range"); ok = false; }
    if(MinRangePctOfPrice > 0.0 && MaxRangePctOfPrice > 0.0 && MinRangePctOfPrice >= MaxRangePctOfPrice)
@@ -520,6 +522,16 @@ int OnInit()
    if(EntryMode == ENTRY_CLOSE_BEYOND && PeriodSeconds() > 3600)
       LogMsg("WARNING: CLOSE_BEYOND mode on a timeframe above H1 will rarely produce an entry inside a " +
              IntegerToString(TradeEndHour - TradeStartHour) + "-hour window");
+   if(RangeSource == RANGE_CHART_TF)
+     {
+      int winSec = g_rangeEndSec - g_rangeStartSec;
+      if(g_rangeOvernight)
+         winSec += 86400;
+      int barsInWindow = winSec / PeriodSeconds();
+      if(barsInWindow < MinRangeBars)
+         LogMsg(StringFormat("WARNING: RangeSource=RANGE_CHART_TF on %s gives at most %d bars inside the range window but MinRangeBars=%d: every day will be skipped. Lower MinRangeBars or use RANGE_M1.",
+                             EnumToString((ENUM_TIMEFRAMES)Period()), barsInWindow, MinRangeBars));
+     }
    LogMsg(StringFormat("Entry=%s SL=%s TP=%.2fR BE@%.2fR trail=%.2fATR buffer=%d pts spread cap=%d pts risk=%.2f%% fixed lots=%s",
                        EnumToString(EntryMode), EnumToString(SLMode), TakeProfitR, MoveToBreakevenAtR, TrailATRMult,
                        BufferPoints, MaxSpreadPoints, RiskPercent, LotsStr(FixedLots)));
@@ -854,12 +866,48 @@ void RecoverDayStateFromHistory()
             g_dayProfit += HistoryDealGetDouble(d, DEAL_PROFIT) + HistoryDealGetDouble(d, DEAL_SWAP) + HistoryDealGetDouble(d, DEAL_COMMISSION);
         }
      }
-   if(CountOurPositions() > 0)
+   // Open positions: only one opened today counts as today's trade. An older one
+   // is stale (EA was offline at ForceCloseHour) and ManagePositions closes it on
+   // this tick; it must not consume today's one-trade-per-day allowance.
+   for(int i = PositionsTotal() - 1; i >= 0; i--)
      {
+      if(!g_position.SelectByIndex(i))
+         continue;
+      if(!IsOurPosition())
+         continue;
       g_posOpenSeen = true;
-      g_tradedToday = true;
-      if(g_tradesToday == 0)
-         g_tradesToday = 1;
+      long pDay = ((long)g_position.Time() - g_shiftSec) / 86400;
+      if(pDay == g_dayIndex)
+        {
+         g_tradedToday = true;
+         if(g_tradesToday == 0)
+            g_tradesToday = 1;
+        }
+      else
+         LogMsg("Position #" + IntegerToString((long)g_position.Ticket()) + " was opened on a previous day: it will be closed and does not count as today's trade");
+     }
+   // Pending orders set up on a previous day (EA offline at TradeEndHour and the
+   // broker ignored the expiration) would otherwise mark that side as "placed" and
+   // block today's stop orders: delete them first.
+   for(int i = OrdersTotal() - 1; i >= 0; i--)
+     {
+      if(!g_order.SelectByIndex(i))
+         continue;
+      if(!IsOurOrder())
+         continue;
+      long oDay = ((long)g_order.TimeSetup() - g_shiftSec) / 86400;
+      if(oDay == g_dayIndex)
+         continue;
+      ulong  tk   = g_order.Ticket();
+      string desc = EnumToString(g_order.OrderType()) + " #" + IntegerToString((long)tk) + " @ " + PriceStr(g_order.PriceOpen());
+      if(g_trade.OrderDelete(tk))
+         LogMsg("Deleted stale " + desc + " (set up on a previous day)");
+      else
+        {
+         g_cancelPendingRequested = true;   // OnTick retries the deletion
+         LogMsg("OrderDelete failed for stale " + desc + ": " + IntegerToString((long)g_trade.ResultRetcode()) + " " +
+                g_trade.ResultRetcodeDescription() + " (will retry)");
+        }
      }
    if(HasOurPending(ORDER_TYPE_BUY_STOP))
       g_buySideDone = true;
@@ -947,6 +995,7 @@ void ComputeRange()
    g_rangeAttempts++;
 
    ENUM_TIMEFRAMES tf = (RangeSource == RANGE_M1) ? PERIOD_M1 : (ENUM_TIMEFRAMES)Period();
+   int      tfSec = PeriodSeconds(tf);
    datetime to = (datetime)((long)g_srvRangeEnd - 1);
    MqlRates rates[];
    int n = CopyRates(_Symbol, tf, g_srvRangeStart, to, rates);
@@ -961,7 +1010,8 @@ void ComputeRange()
    int used = 0;
    for(int i = 0; i < n; i++)
      {
-      if(rates[i].time < g_srvRangeStart || rates[i].time >= g_srvRangeEnd)
+      // keep only bars that open inside the window AND are complete by the window end
+      if(rates[i].time < g_srvRangeStart || (long)rates[i].time + tfSec > (long)g_srvRangeEnd)
          continue;
       if(rates[i].high > hi)
          hi = rates[i].high;
@@ -1036,14 +1086,55 @@ void OnFillDetected(const string source)
      }
   }
 
+// Counts today's entry deals of ours from the deal history. Catches a second
+// stop order that filled while the first position was still open (hedging
+// account, CancelOppositeOnFill=false), which the g_posOpenSeen guard in
+// OnFillDetected deliberately does not count twice.
+int CountTodayEntryDeals()
+  {
+   int n = 0;
+   datetime from = LogicalToServer(g_dayStartLogical);
+   datetime to   = (datetime)((long)TimeCurrent() + 86400);
+   if(!HistorySelect(from, to))
+      return 0;
+   int total = HistoryDealsTotal();
+   for(int i = 0; i < total; i++)
+     {
+      ulong d = HistoryDealGetTicket(i);
+      if(d == 0)
+         continue;
+      if(HistoryDealGetString(d, DEAL_SYMBOL) != _Symbol)
+         continue;
+      if(HistoryDealGetInteger(d, DEAL_MAGIC) != MagicNumber)
+         continue;
+      ENUM_DEAL_TYPE dtype = (ENUM_DEAL_TYPE)HistoryDealGetInteger(d, DEAL_TYPE);
+      if(dtype != DEAL_TYPE_BUY && dtype != DEAL_TYPE_SELL)
+         continue;
+      ENUM_DEAL_ENTRY e = (ENUM_DEAL_ENTRY)HistoryDealGetInteger(d, DEAL_ENTRY);
+      if(e == DEAL_ENTRY_IN || e == DEAL_ENTRY_INOUT)
+         n++;
+     }
+   return n;
+  }
+
 void OnPositionClosed(const string source)
   {
    if(!g_posOpenSeen)
       return;
    g_posOpenSeen = false;
+   int hist = CountTodayEntryDeals();
+   if(hist > g_tradesToday)
+     {
+      LogMsg("Fill count corrected from " + IntegerToString(g_tradesToday) + " to " + IntegerToString(hist) + " from the deal history");
+      g_tradesToday = hist;
+      g_tradedToday = true;
+     }
    LogMsg(StringFormat("Position closed (%s). Day net P/L so far %.2f", source, g_dayProfit));
 
-   if(OneTradePerDay || g_tradesToday >= MaxTradesPerDay)
+   // g_tradesToday == 0 here means the closed position was a stale one from a
+   // previous day (closed by ManagePositions): it does not finish today.
+   bool dayComplete = (g_tradesToday > 0) && (OneTradePerDay || g_tradesToday >= MaxTradesPerDay);
+   if(dayComplete)
      {
       g_dayDone = true;
       if(CountOurPendingOrders() > 0)
@@ -1060,7 +1151,8 @@ void OnPositionClosed(const string source)
       g_buySideDone   = false;
       g_sellSideDone  = false;
       g_placeAttempts = 0;
-      LogV("Re-armed for another entry (trade " + IntegerToString(g_tradesToday) + " of max " + IntegerToString(MaxTradesPerDay) + ")");
+      g_entryAttempts = 0;
+      LogV("Re-armed for another entry (" + IntegerToString(g_tradesToday) + " fill(s) so far, max " + IntegerToString(MaxTradesPerDay) + ")");
      }
   }
 
@@ -1173,7 +1265,7 @@ void TryPlaceStopOrders()
       return;
      }
    ENUM_ORDER_TYPE_TIME tt = g_expirationSupported ? ORDER_TIME_SPECIFIED : ORDER_TIME_GTC;
-   datetime expiry = g_expirationSupported ? g_srvTradeEnd : 0;
+   datetime expiry = g_expirationSupported ? g_srvTradeEnd : (datetime)0;
 
    if(g_placeAttempts == 1)
       LogMsg(StringFormat("Placing OCO stops around range %s-%s, buffer %d pts, ATR(%d)=%s, spread %d pts",
